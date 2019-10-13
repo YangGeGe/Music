@@ -3,7 +3,7 @@ import style from './test.less';
 
 export default function Home() {
   return (
-    <div className={ style.test2 }>
+    <div className={ style.test }>
       <p>hell world</p>
     </div>
   );
