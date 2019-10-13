@@ -1,16 +1,17 @@
-const utils = require("./utils")
-const path = require('path')
+const path = require('path');
+const utils = require('./utils');
+
 module.exports = {
   entry: {
-    app: "./src/index",
+    app: './src/index',
   },
   output: {
-    path : utils.resolve("../dist"),
-    filename: "js/[name].[hash].js",
-    publicPath: "/" 
+    path: utils.resolve('../dist'),
+    filename: 'js/[name].[hash].js',
+    publicPath: '/',
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -23,47 +24,51 @@ module.exports = {
             {
               loader: 'style-loader',
             },
-            { 
+            {
               loader: 'css-loader',
-            }
-          ]
-     },
-     {
+            },
+          ],
+      },
+      {
         test: /\.less$/,
         use: [
-            {
-              loader: 'style-loader', 
-            },
-            {
-              loader: 'css-loader',
-            },
-            {
-              loader: 'less-loader',
-            },
-        ],
-     },
-        {
-          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: 'static/img/[name].[hash:7].[ext]'
+          {
+            loader: 'style-loader',
           },
+          {
+            loader: 'css-loader',
+            options: {
+              module: true,
+            },
+            locaIdentName: '[name]-[local]-[hash:base64:6]',
+          },
+          {
+            loader: 'less-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'static/img/[name].[hash:7].[ext]',
         },
-        {
-          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: 'static/fonts/[name].[hash:7].[ext]'
-          }
-        }
-    ]
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'static/fonts/[name].[hash:7].[ext]',
+        },
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      '@': path.resolve(__dirname, '..', 'src'),
     },
-    resolve: {
-      extensions: ['.js', '.jsx', '.json'],
-      alias: {
-          '@': path.resolve(__dirname, '..', "src"),
-      }
-  }
-}
+  },
+};
