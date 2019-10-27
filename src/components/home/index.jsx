@@ -1,10 +1,22 @@
 import React from 'react';
-import style from './test.less';
 
-export default function Home() {
-  return (
-    <div className={ style.test }>
-      <p>hell world</p>
-    </div>
-  );
+const electron = window.require('electron');
+const { ipcRenderer } = electron;
+
+// import style from './test.less';
+
+class Hello extends React.Component {
+  a() {
+    ipcRenderer.send('window-max');
+  }
+
+  render() {
+    return (
+      <div onClick={ () => { this.a(); } }>
+        HelloMessage
+      </div>
+    );
+  }
 }
+
+export default Hello;

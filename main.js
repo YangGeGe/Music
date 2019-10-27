@@ -1,16 +1,17 @@
-// 引入electron并创建一个Browserwindow
 const { app, BrowserWindow } = require('electron');
-/*
- * const path = require('path');
- * const url = require('url');
- */
+const { ipcMain } = require('electron');
 
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
-let mainWindow;
+let mainWindow = null;
 
 function createWindow() {
-// 创建浏览器窗口,宽高自定义具体大小你开心就好
-  mainWindow = new BrowserWindow({ width: 800, height: 600 });
+  mainWindow = new BrowserWindow({
+    fullscreen: true,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
 
   /*
    * 加载应用-----  electron-quick-start中默认的加载入口
@@ -31,6 +32,14 @@ function createWindow() {
     mainWindow = null;
   });
 }
+
+ipcMain.on('window-max', function () {
+  if (mainWindow.isMaximized()) {
+    mainWindow.restore();
+  } else {
+    mainWindow.maximize();
+  }
+});
 
 // 当 Electron 完成初始化并准备创建浏览器窗口时调用此方法
 app.on('ready', createWindow);
