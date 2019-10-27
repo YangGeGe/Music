@@ -2,7 +2,7 @@
   "name": "music",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "main/main.js",
   "homepage": "https://github.com/YangGeGe/Music#readme",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config config/webpack.dev.config.js",
