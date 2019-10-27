@@ -3,7 +3,7 @@ const utils = require('./utils');
 
 module.exports = {
   entry: {
-    app: './src/index',
+    app: './src/renderer/index',
   },
   output: {
     path: utils.resolve('../dist'),
@@ -68,7 +68,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
-      '@': path.resolve(__dirname, '..', 'src'),
+      '@': path.resolve(__dirname, '..', 'src/renderer'),
     },
   },
 };
