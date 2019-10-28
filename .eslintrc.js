@@ -92,6 +92,7 @@ module.exports = {
       'react/jsx-sort-props': 0,
       'react/jsx-space-before-closing': [2, 'never'],
       'react/jsx-tag-spacing': 0,
+      'react/forbid-prop-types': 0,
       'linebreak-style': [0, 'error', 'windows']
     },
 };
