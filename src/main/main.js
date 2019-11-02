@@ -1,14 +1,18 @@
-const { app, BrowserWindow } = require('electron');
-const { ipcMain } = require('electron');
+const {
+  app,
+  BrowserWindow,
+  ipcMain,
+} = require('electron');
 
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
 let mainWindow = null;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    minWidth: 1000,
+    minHeight: 700,
     frame: false,
+    center: true,
     webPreferences: {
       nodeIntegration: true,
     },

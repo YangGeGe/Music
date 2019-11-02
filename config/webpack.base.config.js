@@ -26,10 +26,6 @@ module.exports = {
             },
             {
               loader: 'css-loader',
-              options: {
-                module: true,
-                localIdentName: '[local]--[hash:base64:5]',
-              },
             },
           ],
       },
@@ -41,6 +37,14 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                context: path.resolve(__dirname, 'src'),
+                hashPrefix: 'my-custom-hash',
+              },
+            },
           },
           {
             loader: 'less-loader',
