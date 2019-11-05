@@ -37,9 +37,12 @@
     "eslint-plugin-react": "^7.16.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.0.0-beta.5",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "react-css-modules": "^4.7.11",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.1",
     "style-loader": "^1.0.0",
     "url-loader": "^2.2.0",
     "webpack": "^4.41.0",
@@ -70,5 +73,10 @@
     "ignore": [
       "**/static/**/*.js"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard \"src/**/*.{js,jsx}\" | snazzy"
+    }
   }
 }
