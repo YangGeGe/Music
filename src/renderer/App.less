@@ -2,3 +2,22 @@ body, div, a, h1, p{
   margin: 0;
   padding: 0;
 }
+@font-face {
+  font-family: 'iconfont';
+  src: url('assets/icons/iconfont.eot');
+  src: url('assets/icons/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('assets/icons/iconfont.woff2') format('woff2'),
+      url('assets/icons/iconfont.woff') format('woff'),
+      url('assets/icons/iconfont.ttf') format('truetype'),
+      url('assets/icons/iconfont.svg#iconfont') format('svg');
+}
+
+:global {
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

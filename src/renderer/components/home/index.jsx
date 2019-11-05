@@ -1,11 +1,13 @@
 import React from 'react';
 import InfinityScroll from '../InfinityScroll';
-import Search from '../common/search'
+import Search from '../common/search';
 
 import styles from './test.less';
 
-const electron = window.require('electron');
-const { ipcRenderer } = electron;
+/*
+ * const electron = window.require('electron');
+ * const { ipcRenderer } = electron;
+ */
 
 class Hello extends React.Component {
   constructor(props) {
@@ -34,8 +36,8 @@ class Hello extends React.Component {
       data,
     } = this.state;
     return (
-      <div className={ styles.test } onClick={ () => { this.a(); } }>
-        <Search></Search>
+      <div onClick={ () => { this.a(); } }>
+        <Search/>
         <InfinityScroll
           itemHeight={ 50 }
           itemMarginTop={ 10 }
