@@ -10,36 +10,37 @@ function Search(props) {
   })
 
   const onKeyDown = (e) => {
-    if(e.keyCode == 13){
-      console.log(e.target.value)
+    if (e.keyCode === 13) {
+      // console.log(e.target.value)
     }
-  }
+  };
   const onChange = (e) => {
-    console.log(e.target.value)
-  }
+    // console.log(e.target.value)
+  };
   const onFocus = () => {
-    setShowHistory(true)
-  }
+    setShowHistory(true);
+    console.log(showHistory);
+  };
   const onBlur = () => {
-    setShowHistory(false)
-  }
+    setShowHistory(false);
+    console.log(showHistory);
+  };
 
 
   return (
-    <div styleName='search'>
+    <div styleName="search">
       <input
-        styleName='input'
+        styleName="input"
         placeholder="搜索"
         onKeyDown={ onKeyDown }
         onChange={ onChange }
         onFocus={ onFocus }
         onBlur={ onBlur }
       />
-      <span styleName="searchIcon" className='iconfont'>&#xe741;</span>
-      {/*<span styleName="clearIcon" className='iconfont'>&#xe6e9;</span>*/}
-      <History visible={showHistory}/>
+      <span styleName="searchIcon" className="iconfont">&#xe741;</span>
+      {/* <span styleName="clearIcon" className='iconfont'>&#xe6e9;</span> */}
     </div>
   );
 }
 
-export default CSSModules(Search,style);
+export default CSSModules(Search, style);
