@@ -1,16 +1,33 @@
-.input{
-  height: 1.7rem;
-  width: 10rem;
-  margin: 0.7rem 0;
-  line-height: 1.7rem;
-  font-size: 0.9rem;
-  padding: 0 0.3rem 0 1.7rem;
-  border: 1px solid skyblue;
-  border-radius: 0.9rem;
-  outline: none;
-  transition: all .5s;
-}
-.input:focus{
-  width: 15rem;
-  transition: all .5s;
+.search{
+  position: relative;
+  margin: 10px 0;
+  // width: 16rem;
+  .input{
+    height: 24px;
+    width: 10rem;
+    line-height: 24px;
+    font-size: 12px;
+    padding: 0 5px 0 24px;
+    border: 1px solid rgba(0, 0, 0, 0.65);
+    border-radius: 12px;
+    outline: none;
+    transition: all .5s;
+  }
+  .searchIcon{
+    position: absolute;
+    left: 10px;
+    line-height: 28px;
+    font-size: 14px;
+  }
+  .clearIcon{
+    position: absolute;
+    right: 10px;
+    line-height: 28px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .input:focus{
+    width: 15rem;
+    transition: all .5s;
+  }
 }
