@@ -1,28 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
+import History from './history.jsx';
 
 function Search(props) {
   const [showHistory, setShowHistory] = useState(false);
+  useEffect(()=>{
+    
+  })
 
   const onKeyDown = (e) => {
     if(e.keyCode == 13){
-      // console.log(e.target.value)
+      console.log(e.target.value)
     }
   }
   const onChange = (e) => {
-    // console.log(e.target.value)
+    console.log(e.target.value)
   }
   const onFocus = () => {
     setShowHistory(true)
-    console.log(showHistory)
   }
   const onBlur = () => {
     setShowHistory(false)
-    console.log(showHistory)
   }
 
-  
+
   return (
     <div styleName='search'>
       <input
@@ -35,6 +37,7 @@ function Search(props) {
       />
       <span styleName="searchIcon" className='iconfont'>&#xe741;</span>
       {/*<span styleName="clearIcon" className='iconfont'>&#xe6e9;</span>*/}
+      <History visible={showHistory}/>
     </div>
   );
 }

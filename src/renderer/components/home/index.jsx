@@ -1,6 +1,5 @@
 import React from 'react';
 import InfinityScroll from '../InfinityScroll';
-import Search from '../common/search';
 
 import styles from './test.less';
 
@@ -37,7 +36,6 @@ class Hello extends React.Component {
     } = this.state;
     return (
       <div onClick={ () => { this.a(); } }>
-        <Search/>
         <InfinityScroll
           itemHeight={ 50 }
           itemMarginTop={ 10 }

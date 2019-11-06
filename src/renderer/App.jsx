@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import HomePage from './components/home';
-// import Header from './components/Header';
+import Header from './components/common/Header';
+import SiderBar from './components/common/SiderBar';
+import Footer from './components/common/Footer';
+import Context from './components/common/Context';
 import './App.less';
 
 export default function App() {
@@ -14,9 +16,11 @@ export default function App() {
     }());
   });
   return (
-    <>
-      {/* <Header/> */}
-      <HomePage/>
-    </>
+    <div className='all'>
+      <Header/>
+      <SiderBar/>
+      <Context/>
+      <Footer/>
+    </div>
   );
 }
