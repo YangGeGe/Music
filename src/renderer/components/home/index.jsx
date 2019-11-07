@@ -1,8 +1,6 @@
 import React from 'react';
 import InfinityScroll from '../InfinityScroll';
 
-import styles from './test.less';
-
 /*
  * const electron = window.require('electron');
  * const { ipcRenderer } = electron;

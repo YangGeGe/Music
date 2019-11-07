@@ -3,16 +3,16 @@ import CSSModules from 'react-css-modules';
 import style from './index.less';
 
 function History(props) {
-  useEffect(()=>{
-    
-  })
+  useEffect(() => {
+
+  });
 
 
   return (
-    <div styleName='history' style={{display: props.visible ? 'block' : 'none'}}>
+    <div styleName="history" style={ { display: props.visible ? 'block' : 'none' } }>
       搜索历史
     </div>
   );
 }
 
-export default CSSModules(History,style);
+export default CSSModules(History, style);
