@@ -3,7 +3,6 @@ const {
   BrowserWindow,
   ipcMain,
 } = require('electron');
-
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
 let mainWindow = null;
 
@@ -11,8 +10,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     minWidth: 1000,
     minHeight: 700,
-    // frame: false,
-    center: true,
+    frame: false,
     webPreferences: {
       nodeIntegration: true,
     },
@@ -31,6 +29,14 @@ function createWindow() {
 
   // 打开开发者工具，默认不打开
   mainWindow.webContents.openDevTools();
+
+  mainWindow.hookWindowMessage(278, () => {
+    mainWindow.setEnabled(false);
+    setTimeout(() => {
+      mainWindow.setEnabled(true);
+    }, 100);
+    return true;
+  });
 
   // 关闭window时触发下列事件.
   mainWindow.on('closed', function () {

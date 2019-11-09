@@ -16,7 +16,7 @@ export default function App() {
     }());
   });
   return (
-    <div className='all'>
+    <div className="all">
       <Header/>
       <SiderBar/>
       <Context/>
