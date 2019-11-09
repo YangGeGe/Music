@@ -10,7 +10,7 @@ function History(props) {
 
   return (
     <div styleName="history" style={ { display: props.visible ? 'block' : 'none' } }>
-      搜索历史
+      {props.content}
     </div>
   );
 }

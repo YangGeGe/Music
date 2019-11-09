@@ -1,8 +1,8 @@
 .search{
-  width: 20rem;
+  position: relative;
   .input{
     height: 24px;
-    width: 10rem;
+    width: 15rem;
     line-height: 24px;
     font-size: 12px;
     padding: 0 5px 0 24px;
@@ -12,29 +12,21 @@
     transition: all .5s;
   }
   .searchIcon{
+    position: absolute;
     left: 10px;
     line-height: 28px;
     font-size: 14px;
   }
-  .clearIcon{
-    right: 10px;
-    line-height: 28px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .input:focus{
-    width: 15rem;
-    transition: all .5s;
-  }
   .history{
-    width: 17rem;
-    min-height: 15rem;
-    max-height: calc(100vh - 100px);
+    width: 15rem;
+    height: 15rem;
     transition: all .5s;
     background: white;
-    left: 0;
-    top: 50px;
+    left: 24px;
+    top: 28px;
     overflow-y: scroll;
     background: pink;
+    position: absolute;
+    z-index: 10;
   }
 }

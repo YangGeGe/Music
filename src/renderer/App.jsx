@@ -16,11 +16,11 @@ export default function App() {
     }());
   });
   return (
-    <div style={ { overflow: 'hidden' } }>
-      <div style={ { width: '15rem', float: 'left' } }>
+    <div className='app'>
+      <div className='sidemenu'>
         <SiderBar/>
       </div>
-      <div style={ { width: 'calc(100%-15rem)', float: 'left' } }>
+      <div className='infos'>
         {/* <Header/> */}
         <Context/>
         <Footer/>

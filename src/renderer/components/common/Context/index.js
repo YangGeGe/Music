@@ -11,13 +11,13 @@ function Context(props) {
 
   return (
     <div styleName='context'>
-      <div styleName='header'>
-        <div styleName='banner'>banner</div>
-        <div styleName='otherInfo'>
-          
-        </div>
+      <div styleName='banner'>
+        banner
       </div>
-      <HomePage/>
+      <div styleName='searchAndList'>
+        <Search/>
+        <HomePage/>
+      </div>
     </div>
   );
 }
