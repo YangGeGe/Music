@@ -5,6 +5,7 @@ import History from './history.jsx';
 
 function Search(props) {
   const [showHistory, setShowHistory] = useState(false);
+  const [InputContent, setInputContent] = useState('');
   useEffect(()=>{
     
   })
@@ -15,10 +16,11 @@ function Search(props) {
     }
   };
   const onChange = (e) => {
-    // console.log(e.target.value)
+    setShowHistory(true);
+    setInputContent(e.target.value)
   };
   const onFocus = () => {
-    setShowHistory(true);
+    
   };
   const onBlur = () => {
     setShowHistory(false);
@@ -36,8 +38,7 @@ function Search(props) {
         onBlur={ onBlur }
       />
       <span styleName="searchIcon" className="iconfont">&#xe741;</span>
-      {/* <span styleName="clearIcon" className='iconfont'>&#xe6e9;</span> */}
-      <History visible={showHistory}/>
+      <History visible={showHistory} content={InputContent}/>
     </div>
   );
 }
