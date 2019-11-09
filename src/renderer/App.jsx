@@ -16,11 +16,15 @@ export default function App() {
     }());
   });
   return (
-    <div className='all'>
-      <Header/>
-      <SiderBar/>
-      <Context/>
-      <Footer/>
+    <div style={{overflow:'hidden',}}>
+      <div style={{width:'15rem',float:'left'}}>
+        <SiderBar/>
+      </div>
+      <div style={{width:'calc(100%-15rem)',float:'left'}}>
+        {/*<Header/>*/}
+        <Context/>
+        <Footer/>
+      </div>
     </div>
   );
 }

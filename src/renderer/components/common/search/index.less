@@ -1,7 +1,5 @@
 .search{
-  // position: relative;
   width: 20rem;
-  float: right;
   .input{
     height: 24px;
     width: 10rem;
@@ -14,13 +12,11 @@
     transition: all .5s;
   }
   .searchIcon{
-    position: absolute;
     left: 10px;
     line-height: 28px;
     font-size: 14px;
   }
   .clearIcon{
-    position: absolute;
     right: 10px;
     line-height: 28px;
     font-size: 14px;
@@ -31,16 +27,14 @@
     transition: all .5s;
   }
   .history{
-    width: 20rem;
-    height: calc(100% - 100px);
+    width: 17rem;
+    min-height: 15rem;
+    max-height: calc(100vh - 100px);
     transition: all .5s;
     background: white;
-    position: absolute;
-    right: 0;
+    left: 0;
     top: 50px;
     overflow-y: scroll;
     background: pink;
-    z-index: 0;
-    // box-shadow: -4px 0px 10px 0 rgba(0, 0, 0, .25);
   }
 }
