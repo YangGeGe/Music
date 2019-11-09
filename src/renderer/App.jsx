@@ -16,11 +16,11 @@ export default function App() {
     }());
   });
   return (
-    <div className='app'>
-      <div className='sidemenu'>
+    <div className="app">
+      <div className="sidemenu">
         <SiderBar/>
       </div>
-      <div className='infos'>
+      <div className="infos">
         {/* <Header/> */}
         <Context/>
         <Footer/>
