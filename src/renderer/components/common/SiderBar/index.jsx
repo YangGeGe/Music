@@ -9,10 +9,19 @@ function SiderBar(props) {
 
   return (
     <div styleName='siderBar'>
-      <div style={{marginBottom:'200px'}}>侧边栏</div>
-      <div style={{marginBottom:'200px'}}>侧边栏</div>
-      <div style={{marginBottom:'200px'}}>侧边栏</div>
-      <div style={{marginBottom:'200px'}}>侧边栏</div>
+      <div>
+        <span className='iconfont'>&#xe615;</span>
+        <span>Owner</span>
+      </div>
+      <div>
+        列表
+      </div>
+      <div>
+        我的音乐列表
+      </div>
+      <div>
+        添加音乐列表
+      </div>
     </div>
   );
 }

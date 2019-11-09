@@ -1,9 +1,9 @@
 .footer{
   width: 100%;
   height: 50px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  // background: rgba(0,0,0,.05);
+  background: rgba(0,0,0,.05);
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -15,8 +15,9 @@
     width: 30%;
   }
   .playInfo{
-    flex: 1;
-    line-height: 50px;
+    width: 35%;
+    display: flex;
+    align-items: center;
     .play{
       font-size: 36px;
       color: red;
@@ -29,14 +30,11 @@
     .lastSong, .nextSong{
       font-size: 24px;
       color: red;
-      margin: 0 10px;
+      // margin: 0 10px;
     }
     .collection, .share{
       font-size: 20px;
-      margin: 0 10px;
+      // margin: 0 10px;
     }
-  }
-  .otherInfo{
-    width: 20%;
   }
 }

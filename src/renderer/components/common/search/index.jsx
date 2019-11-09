@@ -19,11 +19,9 @@ function Search(props) {
   };
   const onFocus = () => {
     setShowHistory(true);
-    console.log(showHistory);
   };
   const onBlur = () => {
     setShowHistory(false);
-    console.log(showHistory);
   };
 
 
@@ -39,6 +37,7 @@ function Search(props) {
       />
       <span styleName="searchIcon" className="iconfont">&#xe741;</span>
       {/* <span styleName="clearIcon" className='iconfont'>&#xe6e9;</span> */}
+      <History visible={showHistory}/>
     </div>
   );
 }

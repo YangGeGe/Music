@@ -11,14 +11,16 @@ function Footer(props) {
     <div styleName='footer'>
       <div styleName='musicInfo'>
         <span className='iconfont'>&#xe73b;</span>
+        music信息
+      </div>
+      <div style={{width:'35%'}}>
+        进度条
       </div>
       <div styleName='playInfo'>
         <span styleName='collection' className='iconfont'>&#xe708;</span>
         <span styleName='lastSong' className='iconfont'>&#xe800;</span>
         <span styleName='play' className='iconfont'>&#xe630;</span>
         <span styleName='nextSong' className='iconfont'>&#xe7ff;</span>
-      </div>
-      <div styleName='otherInfo'>
         <span className='iconfont'>&#xe66c;</span>
         <span className='iconfont'>&#xe66d;</span>
         <span className='iconfont'>&#xe714;</span>
