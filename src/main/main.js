@@ -1,8 +1,11 @@
 const {
   app,
   BrowserWindow,
-  ipcMain,
 } = require('electron');
+const {
+  windowResize,
+} = require('./ipcMain');
+
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
 let mainWindow = null;
 
@@ -44,13 +47,7 @@ function createWindow() {
   });
 }
 
-ipcMain.on('window-max', function () {
-  if (mainWindow.isMaximized()) {
-    mainWindow.restore();
-  } else {
-    mainWindow.maximize();
-  }
-});
+windowResize(mainWindow);
 
 // 当 Electron 完成初始化并准备创建浏览器窗口时调用此方法
 app.on('ready', createWindow);
