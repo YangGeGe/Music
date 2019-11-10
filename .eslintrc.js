@@ -69,6 +69,7 @@ module.exports = {
         optionalDependencies: false,
       }],
       'react/no-danger': 0, // 允许使用 dangerouslySetInnerHTML
+      'react/jsx-props-no-spreading': 0,
       'react/no-direct-mutation-state': 2, // 禁止直接修改 state
       'react/no-did-update-set-state': 0,     //
       'react/no-find-dom-node': 2,            // 禁止使用 findDomNode

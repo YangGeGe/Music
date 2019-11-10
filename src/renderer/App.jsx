@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-// import Header from './components/common/Header';
-import SiderBar from './components/common/SiderBar';
-import Footer from './components/common/Footer';
-import Context from './components/common/Context';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
+import router from './router';
 import './App.less';
 
 export default function App() {
@@ -16,15 +17,24 @@ export default function App() {
     }());
   });
   return (
-    <div className="app">
-      <div className="sidemenu">
-        <SiderBar/>
-      </div>
-      <div className="infos">
-        {/* <Header/> */}
-        <Context/>
-        <Footer/>
-      </div>
-    </div>
+    <Router>
+      <>
+        {
+        router.map(({ path, componentName, exact = true, routes = [], key }) => {
+          const Tag = componentName;
+          return (
+            <Route
+              exact={ exact }
+              key={ key }
+              path={ path }
+              render={ props => (
+                <Tag { ...props } routes={ routes }/>
+              ) }
+            />
+          );
+        })
+      }
+      </>
+    </Router>
   );
 }

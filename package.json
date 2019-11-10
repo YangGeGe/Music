@@ -58,7 +58,7 @@
     "react": "^16.10.2",
     "react-css-modules": "^4.7.11",
     "react-dom": "^16.10.2",
-    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "webpack-merge": "^4.2.2"
   },
   "lint-staged": {
