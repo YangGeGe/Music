@@ -52,13 +52,13 @@ class MessageBox extends Component {
       loading: 'toast_loading',
     };
     return (
-      <div className="toast">
+      <div styleName="toast">
         {
           notices.map(notice => (
-            <div className="toast_bg" key={ notice.key }>
-              <div className="toast_box">
-                <div className={ `toast_icon ${icons[notice.type]}` }/>
-                <div className="toast_text">{notice.content}</div>
+            <div styleName="toast_bg" key={ notice.key }>
+              <div styleName="toast_box">
+                <div styleName={ `toast_icon ${icons[notice.type]}` }/>
+                <div styleName="toast_text">{notice.content}</div>
               </div>
             </div>
           ))
