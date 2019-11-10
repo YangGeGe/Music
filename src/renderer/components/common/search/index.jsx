@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 import History from './history.jsx';
+import Message from '../method/message/index.jsx';
 
 function Search(props) {
   const [showHistory, setShowHistory] = useState(false);
@@ -13,6 +14,7 @@ function Search(props) {
   const onKeyDown = (e) => {
     if (e.keyCode === 13) {
       // console.log(e.target.value)
+      Message.success('haha')
     }
   };
   const onChange = (e) => {

@@ -5,15 +5,15 @@ const {
 const {
   windowResize,
 } = require('./ipcMain');
-
+const os = require ('os');
+const platForm = os.platform() === 'win32';
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
 let mainWindow = null;
-
 function createWindow() {
   mainWindow = new BrowserWindow({
     minWidth: 1020,
     minHeight: 660,
-    frame: false,
+    frame: !platForm,
     webPreferences: {
       nodeIntegration: true,
     },
@@ -33,7 +33,7 @@ function createWindow() {
   // 打开开发者工具，默认不打开
   mainWindow.webContents.openDevTools();
 
-  mainWindow.hookWindowMessage(278, () => {
+  platForm === true && mainWindow.hookWindowMessage(278, () => {
     mainWindow.setEnabled(false);
     setTimeout(() => {
       mainWindow.setEnabled(true);
