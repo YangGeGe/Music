@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 import style from './index.less';
 import HomePage from '../../components/home';
 import Search from '../../components/common/Search';
-import message from '../../components/method/message';
+import message from '../../components/common/Message';
 
 function MusicHome() {
   const [showHistory, setShowHistory] = useState(false);

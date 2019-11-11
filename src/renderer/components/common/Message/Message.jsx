@@ -1,72 +1,59 @@
-import React, { Component } from 'react';
-import CSSModules from 'react-css-modules';
-import styles from './Message.less';
+import React, { Component } from 'react'
+import './index.css';
 
 class MessageBox extends Component {
   constructor() {
-    super();
-    this.transitionTime = 300;
-    this.state = { notices: [] };
-    this.removeNotice = this.removeNotice.bind(this);
+    super()
+    this.state = { notices: [] }
+    this.removeNotice = this.removeNotice.bind(this)
   }
-
-  // 邦迪唯一的key
+  //邦迪唯一的key
   getNoticeKey() {
-    const { notices } = this.state;
-    return `notice-${new Date().getTime()}-${notices.length}`;
+    const { notices } = this.state
+    return `notice-${new Date().getTime()}-${notices.length}`
   }
-
   addNotice(notice) {
-    const { notices } = this.state;
-    notice.key = this.getNoticeKey();
-    // notices.push(notice);//展示所有的提示
-    notices[0] = notice;// 仅展示最后一个提示
-    this.setState({ notices });
+    const { notices } = this.state
+    notice.key = this.getNoticeKey()
+    notices[0] = notice;//仅展示最后一个提示
+    this.setState({ notices })
     if (notice.duration > 0) {
       setTimeout(() => {
-        this.removeNotice(notice.key);
-      }, notice.duration);
+        this.removeNotice(notice.key)
+      }, notice.duration)
     }
-    return () => { this.removeNotice(notice.key); };
+    return () => { this.removeNotice(notice.key) }
   }
-
   removeNotice(key) {
-    const { notices } = this.state;
+    const { notices } = this.state
     this.setState({
       notices: notices.filter((notice) => {
         if (notice.key === key) {
-          if (notice.onClose) { setTimeout(notice.onClose, this.transitionTime); }
-          return false;
+          return false
         }
-        return true;
-      }),
-    });
+        return true
+      })
+    })
   }
-
   render() {
     const { notices } = this.state;
-    const icons = {
-      info: 'toast_info',
-      success: 'toast_success',
-      error: 'toast_error',
-      loading: 'toast_loading',
-    };
     return (
-      <div styleName="toast">
+      <div className="toast">
         {
           notices.map(notice => (
-            <div styleName="toast_bg" key={ notice.key }>
-              <div styleName="toast_box">
-                <div styleName={ `toast_icon ${icons[notice.type]}` }/>
-                <div styleName="toast_text">{notice.content}</div>
+            <div className="toast_bg" key={notice.key}>
+              <div className='toast_box'>
+                {notice.type == 'success' && <span className={`toast_icon iconfont ${notice.type}_icon`}>&#xe69e;</span>}
+                {notice.type == 'error' &&<span className={`toast_icon iconfont ${notice.type}_icon`}>&#xe644;</span>}
+                {notice.type == 'info' &&<span className={`toast_icon iconfont ${notice.type}_icon`}>&#xe685;</span>}
+                <span className='toast_text'>{notice.content}</span> 
               </div>
             </div>
           ))
         }
       </div>
-    );
+    )
   }
 }
 
-export default CSSModules(MessageBox, styles);
-
+export default MessageBox
