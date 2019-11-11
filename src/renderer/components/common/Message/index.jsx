@@ -33,7 +33,10 @@ export default {
   error(content, duration) {
     return notice('error', content, duration)
   },
-  // loading(content = '加载中...', duration = 0) {
-  //   return notice('loading', content, duration)
-  // }
+  warning(content, duration) {
+    return notice('warning', content, duration)
+  },
+  loading(content = '加载中...', duration = 0) {
+    return notice('loading', content, duration)
+  }
 }

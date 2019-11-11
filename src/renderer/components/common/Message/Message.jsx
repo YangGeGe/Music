@@ -47,6 +47,8 @@ class MessageBox extends Component {
                 {notice.type == 'success' && <span styleName={`${notice.type}_icon`} className='iconfont'>&#xe69e;</span>}
                 {notice.type == 'error' &&<span styleName={`t${notice.type}_icon`} className='iconfont'>&#xe644;</span>}
                 {notice.type == 'info' &&<span styleName={`${notice.type}_icon`} className='iconfont'>&#xe685;</span>}
+                {notice.type == 'warning' &&<span styleName={`${notice.type}_icon`} className='iconfont'>&#xe685;</span>}
+                {notice.type == 'loading' &&<span styleName={`${notice.type}_icon`} className='iconfont'>&#xe60e;</span>}
                 <span styleName='toast_text'>{notice.content}</span> 
               </div>
             </div>

@@ -14,8 +14,10 @@ function MusicHome() {
   })
   const onKeyDown = (e) => {
     if (e.keyCode === 13) {
-      // message.info('我是message中的额长度测试哟')
-      message.success('成功')
+      message.loading('加载中...')
+      setTimeout(function(){
+        message.success('加载成功')
+      },2000)
     }
   };
   const onChange = (e) => {

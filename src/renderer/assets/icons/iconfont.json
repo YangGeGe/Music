@@ -139,6 +139,13 @@
       "unicode_decimal": 59195
     },
     {
+      "icon_id": "3493866",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
       "icon_id": "3878696",
       "name": "音乐",
       "font_class": "vynil",
@@ -461,6 +468,13 @@
       "unicode_decimal": 59201
     },
     {
+      "icon_id": "7249712",
+      "name": "loading",
+      "font_class": "loading1",
+      "unicode": "e507",
+      "unicode_decimal": 58631
+    },
+    {
       "icon_id": "8281495",
       "name": "云",
       "font_class": "yun",
@@ -487,6 +501,13 @@
       "font_class": "huaban",
       "unicode": "e60d",
       "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "10322038",
+      "name": "loading-solid",
+      "font_class": "loading-solid",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
     }
   ]
 }
