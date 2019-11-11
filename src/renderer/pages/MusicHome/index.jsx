@@ -8,41 +8,41 @@ import message from '../../components/common/Message';
 function MusicHome() {
   const [showHistory, setShowHistory] = useState(false);
   const [inputContent, setInputContent] = useState('');
-  
-  useEffect(()=>{
-    
-  })
+
+  useEffect(() => {
+
+  });
   const onKeyDown = (e) => {
     if (e.keyCode === 13) {
-      message.loading('加载中...')
-      setTimeout(function(){
-        message.success('加载成功')
-      },2000)
+      message.loading('加载中...');
+      setTimeout(function () {
+        message.success('加载成功');
+      }, 2000);
     }
   };
   const onChange = (e) => {
     setShowHistory(true);
-    setInputContent(e.target.value)
+    setInputContent(e.target.value);
   };
   const onFocus = () => {
-    
+
   };
   const onBlur = () => {
     setShowHistory(false);
   };
   return (
-    <div styleName='context'>
-      <div styleName='banner'>
+    <div styleName="context">
+      <div styleName="banner">
         banner
       </div>
-      <div styleName='searchAndList'>
+      <div styleName="searchAndList">
         <Search
-          onKeyDown={onKeyDown}
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          showHistory={showHistory}
-          inputContent={inputContent}
+          onKeyDown={ onKeyDown }
+          onChange={ onChange }
+          onFocus={ onFocus }
+          onBlur={ onBlur }
+          showHistory={ showHistory }
+          inputContent={ inputContent }
         />
         <HomePage/>
       </div>
@@ -50,4 +50,4 @@ function MusicHome() {
   );
 }
 
-export default CSSModules(MusicHome,style);
+export default CSSModules(MusicHome, style);
