@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import './index.css';
+import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
+import style from './index.less';
 
 class MessageBox extends Component {
   constructor() {
@@ -38,15 +39,15 @@ class MessageBox extends Component {
   render() {
     const { notices } = this.state;
     return (
-      <div className="toast">
+      <div styleName="toast">
         {
           notices.map(notice => (
-            <div className="toast_bg" key={notice.key}>
-              <div className='toast_box'>
-                {notice.type == 'success' && <span className={`toast_icon iconfont ${notice.type}_icon`}>&#xe69e;</span>}
-                {notice.type == 'error' &&<span className={`toast_icon iconfont ${notice.type}_icon`}>&#xe644;</span>}
-                {notice.type == 'info' &&<span className={`toast_icon iconfont ${notice.type}_icon`}>&#xe685;</span>}
-                <span className='toast_text'>{notice.content}</span> 
+            <div styleName="toast_bg" key={notice.key}>
+              <div styleName='toast_box'>
+                {notice.type == 'success' && <span styleName={`${notice.type}_icon`} className='iconfont'>&#xe69e;</span>}
+                {notice.type == 'error' &&<span styleName={`t${notice.type}_icon`} className='iconfont'>&#xe644;</span>}
+                {notice.type == 'info' &&<span styleName={`${notice.type}_icon`} className='iconfont'>&#xe685;</span>}
+                <span styleName='toast_text'>{notice.content}</span> 
               </div>
             </div>
           ))
@@ -56,4 +57,4 @@ class MessageBox extends Component {
   }
 }
 
-export default MessageBox
+export default CSSModules(MessageBox,style)
