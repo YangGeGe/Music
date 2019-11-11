@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "429241",
+      "name": "错号",
+      "font_class": "error-1",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
       "icon_id": "647455",
       "name": "播放",
       "font_class": "bofang",
@@ -41,6 +48,13 @@
       "unicode_decimal": 59084
     },
     {
+      "icon_id": "904047",
+      "name": "感叹号",
+      "font_class": "gantanhao",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
       "icon_id": "1076336",
       "name": "收缩2",
       "font_class": "shousuo2",
@@ -53,6 +67,13 @@
       "font_class": "shousuo1",
       "unicode": "e68f",
       "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "1239935",
+      "name": "对号2",
+      "font_class": "duihao2",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
     },
     {
       "icon_id": "1272133",
@@ -74,6 +95,13 @@
       "font_class": "liebiao",
       "unicode": "e640",
       "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "2000973",
+      "name": "错号",
+      "font_class": "cuohao",
+      "unicode": "e644",
+      "unicode_decimal": 58948
     },
     {
       "icon_id": "2076319",

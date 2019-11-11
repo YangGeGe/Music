@@ -1,12 +1,18 @@
-.app {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sidemenu {
-  width: 15rem;
-}
-
-.infos {
-  flex: 1;
+.context{
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  padding-bottom: 50px;
+  width: 100%;
+  height: 100%;
+  .banner{
+    width: 50rem;
+    height: 15rem;
+    background:pink;
+    float: left;
+  }
+  .searchAndList{
+    float: left;
+    width: calc(100% - 50rem);
+  }
 }

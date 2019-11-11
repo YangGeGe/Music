@@ -6,8 +6,7 @@ function History(props) {
   useEffect(() => {
 
   });
-
-
+  
   return (
     <div styleName="history" style={ { display: props.visible ? 'block' : 'none' } }>
       {props.content}
