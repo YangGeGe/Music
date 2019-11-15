@@ -2,6 +2,9 @@
 1. web: `npm run dev`
 
 2. electron: `npm run electron-start`
+## 命名规范
+### 组件，文件夹命名大写
+### class命名 -中划线连接
 ## git提交规范
 - feat：新功能（feature）
 - fix：修补bug

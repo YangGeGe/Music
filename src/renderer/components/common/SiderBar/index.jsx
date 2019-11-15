@@ -16,7 +16,7 @@ function SiderBar() {
       setShowList(false);
     }
   };
-
+  const a = '\ue602;';
   return (
     <div styleName="siderBar">
       <div styleName="user">
@@ -27,7 +27,7 @@ function SiderBar() {
         </div>
       </div>
       <div styleName="oneList">
-        <div> <span className="iconfont">&#xe602;</span> 发现音乐</div>
+        <div> <span className="iconfont">{a}</span> 发现音乐</div>
         <div> <span className="iconfont">&#xe62b;</span> 私人FM</div>
         <div> <span className="iconfont">&#xe615;</span> 朋友</div>
       </div>
