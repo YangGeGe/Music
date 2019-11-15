@@ -10,10 +10,12 @@ function createMessage() {
     addNotice(notice) {
       return notification.addNotice(notice);
     },
-    destroy() {
-      ReactDOM.unmountComponentAtNode(div);
-      document.body.removeChild(div);
-    },
+    /*
+     * destroy() {
+     *   ReactDOM.unmountComponentAtNode(div);
+     *   document.body.removeChild(div);
+     * }
+     */
   };
 }
 
