@@ -1,67 +1,79 @@
-.app{
+.app {
   display: flex;
   height: 100vh;
   width: 100vh;
+
   .sidemenu {
     width: 15rem;
     height: 100%;
   }
+
   .infos {
     flex: 1;
     height: 100%;
   }
 }
 
-.context{
+.context {
   overflow-y: scroll;
   position: fixed;
   top: 0;
   padding-bottom: 50px;
   width: 100%;
   height: 100%;
-  background: rgba(20,18,32);
-  .contextTop{
+  background: rgba(20, 18, 32);
+
+  .contextTop {
     display: flex;
     justify-content: space-between;
-    .banner{
+
+    .banner {
       // width: 35rem;
       // height: 20rem;
       height: 100%;
       width: 100%;
-      background:pink;
-      img{
+      background: pink;
+
+      img {
         height: 100%;
         width: 100%;
       }
     }
-    .searchAndList{
+
+    .searchAndList {
       width: calc(100% - 35rem);
-      .rankingTitle{
-        color: rgba(210,210,210);
+
+      .rankingTitle {
+        color: rgba(210, 210, 210);
       }
     }
-    .contextLists{
+
+    .contextLists {
       padding: 1.25rem 1.25rem 1rem 1.25rem;
-      background: rgba(30,28,42);
+      background: rgba(30, 28, 42);
       width: 50%;
       border-radius: 10px;
-      .contextList{
+
+      .contextList {
         display: flex;
         align-items: center;
         margin: 0 0 1rem 0;
-        img{
+
+        img {
           width: 2.4rem;
           height: 2.4rem;
           border-radius: .3rem;
           margin-right: 2rem;
         }
-        div{
-          span{
+
+        div {
+          span {
             display: block;
             font-size: .9rem;
-            color: rgba(99,98,112);
+            color: rgba(99, 98, 112);
           }
-          .musicTitle{
+
+          .musicTitle {
             color: white;
           }
         }
