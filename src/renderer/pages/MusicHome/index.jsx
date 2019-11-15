@@ -4,6 +4,7 @@ import style from './index.less';
 import HomePage from '../../components/home';
 import Search from '../../components/common/Search';
 import message from '../../components/common/Message';
+import Banner from './Banner'
 
 function MusicHome() {
   const [showHistory, setShowHistory] = useState(false);
@@ -32,9 +33,7 @@ function MusicHome() {
   };
   return (
     <div styleName='context'>
-      <div styleName='banner'>
-        banner
-      </div>
+      <Banner/>
       <div styleName='searchAndList'>
         <Search
           onKeyDown={onKeyDown}

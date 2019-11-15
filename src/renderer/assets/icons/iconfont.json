@@ -139,6 +139,13 @@
       "unicode_decimal": 59195
     },
     {
+      "icon_id": "3163645",
+      "name": "FM",
+      "font_class": "iconku-zhuanqu-",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
       "icon_id": "3493866",
       "name": "loading",
       "font_class": "loading",
@@ -473,6 +480,20 @@
       "font_class": "loading1",
       "unicode": "e507",
       "unicode_decimal": 58631
+    },
+    {
+      "icon_id": "7476487",
+      "name": "发现音乐",
+      "font_class": "icon-test1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "7913014",
+      "name": "FM2",
+      "font_class": "FM",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
     },
     {
       "icon_id": "8281495",
