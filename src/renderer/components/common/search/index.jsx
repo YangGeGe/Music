@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
-import History from './History.jsx';
+import History from './History';
 
 function Search(props) {
-  useEffect(()=>{
-    
-  })
+  useEffect(() => {
+
+  });
 
   return (
     <div styleName="search">
@@ -19,7 +19,7 @@ function Search(props) {
         onBlur={ props.onBlur }
       />
       <span styleName="searchIcon" className="iconfont">&#xe741;</span>
-      <History visible={props.showHistory} content={props.inputContent}/>
+      <History visible={ props.showHistory } content={ props.inputContent }/>
     </div>
   );
 }

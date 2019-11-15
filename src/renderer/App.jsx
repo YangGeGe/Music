@@ -5,8 +5,6 @@ import {
 } from 'react-router-dom';
 import router from './router';
 import './App.less';
-import SiderBar from './components/common/SiderBar';
-import Footer from './components/common/Footer';
 
 export default function App() {
   useEffect(() => {
@@ -19,13 +17,9 @@ export default function App() {
     }());
   });
   return (
-    <div className='app'>
-      <div className="sidemenu">
-        <SiderBar/>
-      </div>
-      <div className="infos">
-        <Router>
-          {
+    <div>
+      <Router>
+        {
             router.map(({ path, componentName, exact = true, routes = [], key }) => {
               const Tag = componentName;
               return (
@@ -40,9 +34,7 @@ export default function App() {
               );
             })
           }
-        </Router>
-        <Footer/>
-      </div>
+      </Router>
     </div>
   );
 }
