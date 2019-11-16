@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
-import SiderBar from '../../components/common/SiderBar';
+import SiderBar from '../../components/MusicHomeComponents/SiderBar';
 import Search from '../../components/common/Search';
 import message from '../../components/common/Message';
 import Banner from './Banner';
@@ -9,7 +9,6 @@ import Banner from './Banner';
 function MusicHome() {
   const [showHistory, setShowHistory] = useState(false);
   const [inputContent, setInputContent] = useState('');
-
   useEffect(() => {
 
   });
