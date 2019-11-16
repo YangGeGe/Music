@@ -2,10 +2,11 @@ const {
   app,
   BrowserWindow,
 } = require('electron');
+const os = require('os');
 const {
   windowResize,
 } = require('./ipcMain');
-const os = require ('os');
+
 const platForm = os.platform() === 'win32';
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
 let mainWindow = null;
