@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
-// import { useSelector, connect } from 'react-redux';
+import { useSelector, connect } from 'react-redux';
 import SiderBar from '../../components/MusicHomeComponents/SiderBar';
 import Search from '../../components/common/Search';
 import message from '../../components/common/Message';
@@ -34,7 +34,7 @@ function MusicHome() {
   const onBlur = () => {
     setShowHistory(false);
   };
-  // console.log(useSelector(state => state.num));
+  console.log(useSelector(state => state.num));
   return (
     <div styleName="app">
       <div styleName="sidemenu">
