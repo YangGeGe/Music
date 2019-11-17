@@ -1,30 +1,34 @@
 // 一些映射
 export const MODULAR_ITEM_MAP = {
-  FIND_MUSIC: '发现音乐',
-  FRINDS: '朋友',
-  LOCAL_MUSIC: '本地音乐',
-  DOWLOAD_MANAGE: '下载管理',
-  MY_COLLECTION: '我的收藏',
+  FIND_MUSIC: { name: '发现音乐', icon: '\ue602' },
+  PRIVTE: { name: '私人FM', icon: '\ue62b' },
+  FRINDS: { name: '朋友', icon: '\ue615' },
+  LOCAL_MUSIC: { name: '下载管理', icon: '\ue723' },
+  DOWLOAD_MANAGE: { name: '我的音乐云盘', icon: '\ue621' },
+  MY_COLLECTION: { name: '我的收藏', icon: '\ue859' },
 };
 
 const USER_MODULAR_ITEM = [
-  'LOCAL_MUSIC',
-  'DOWLOAD_MANAGE',
-  'MY_COLLECTION',
+  MODULAR_ITEM_MAP.LOCAL_MUSIC,
+  MODULAR_ITEM_MAP.DOWLOAD_MANAGE,
+  MODULAR_ITEM_MAP.MY_COLLECTION,
 ];
 
 const RECOMMEND_MODULAR_ITEM = [
-  'FIND_MUSIC',
-  'FRINDS',
+  MODULAR_ITEM_MAP.FIND_MUSIC,
+  MODULAR_ITEM_MAP.FRINDS,
+  MODULAR_ITEM_MAP.PRIVTE,
 ];
 
 export const Modular = [
   {
-    title: '推荐',
-    modular: USER_MODULAR_ITEM,
+    title: '',
+    key: 'recommend',
+    modular: RECOMMEND_MODULAR_ITEM,
   },
   {
     title: '我的音乐',
-    modular: RECOMMEND_MODULAR_ITEM,
+    key: 'my-music',
+    modular: USER_MODULAR_ITEM,
   },
 ];

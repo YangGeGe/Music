@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
+import SiderBarMenu from '../SiderBarMenu';
+import { Modular } from '../../constraint';
 
 function SiderBar() {
-  const [showList, setShowList] = useState(false);
-  const [count, setCount] = useState(0);
   useEffect(() => {
 
   });
-  const shrinkOrShow = () => {
-    setCount(count + 1);
-    if (count % 2 === 0) {
-      setShowList(true);
-    } else {
-      setShowList(false);
-    }
-  };
-  const a = '\ue602;';
   return (
     <div styleName="siderBar">
       <div styleName="user">
@@ -26,22 +17,16 @@ function SiderBar() {
           <span title="我是海绵宝宝的朋友">我是海绵宝宝的朋友</span>
         </div>
       </div>
-      <div styleName="oneList">
-        <div> <span className="iconfont">{a}</span> 发现音乐</div>
-        <div> <span className="iconfont">&#xe62b;</span> 私人FM</div>
-        <div> <span className="iconfont">&#xe615;</span> 朋友</div>
-      </div>
-      <div styleName="oterList">
-        <div styleName="listTitle" onClick={ shrinkOrShow }>
-          {showList ? <span className="iconfont">&#xe68d;</span> : <span className="iconfont">&#xe68f;</span>} 我的音乐
-        </div>
-        {showList && (
-        <div styleName="secondLists">
-          <div> <span className="iconfont">&#xe723;</span> 下载管理</div>
-          <div> <span className="iconfont">&#xe621;</span> 我的音乐云盘</div>
-          <div> <span className="iconfont">&#xe859;</span> 我的收藏</div>
-        </div>
-        )}
+      <div>
+        {
+          Modular.map(modular => (
+            <SiderBarMenu
+              key={ modular.key }
+              title={ modular.title }
+              menuList={ modular.modular }
+            />
+          ))
+        }
       </div>
     </div>
   );

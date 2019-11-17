@@ -57,6 +57,7 @@ module.exports = {
       'no-mixed-operators': 0,
       'no-prototype-builtins': 0, // 禁止操作 Object.prototype
       'object-curly-newline': ['error', {consistent: true}],
+      'multiline-comment-style': 0,
       // 'object-curly-newline': ['error', {multiline: true}],
       'prefer-arrow-callback': 0, // callback里允许使用普通函数
       'import/no-amd': 0,         // 允许 amd 导入风格
