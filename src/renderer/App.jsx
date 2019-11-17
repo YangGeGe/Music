@@ -17,24 +17,22 @@ export default function App() {
     }());
   });
   return (
-    <div>
-      <Router>
-        {
-            router.map(({ path, componentName, exact = true, routes = [], key }) => {
-              const Tag = componentName;
-              return (
-                <Route
-                  exact={ exact }
-                  key={ key }
-                  path={ path }
-                  render={ props => (
-                    <Tag { ...props } routes={ routes }/>
-                  ) }
-                />
-              );
-            })
-          }
-      </Router>
-    </div>
+    <Router>
+      {
+        router.map(({ path, componentName, exact = true, routes = [], key }) => {
+          const Tag = componentName;
+          return (
+            <Route
+              exact={ exact }
+              key={ key }
+              path={ path }
+              render={ props => (
+                <Tag { ...props } routes={ routes }/>
+              ) }
+            />
+          );
+        })
+      }
+    </Router>
   );
 }

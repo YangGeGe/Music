@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
-import style from './index.less';
+// import { useSelector, connect } from 'react-redux';
 import SiderBar from '../../components/MusicHomeComponents/SiderBar';
 import Search from '../../components/common/Search';
 import message from '../../components/common/Message';
 import Banner from './Banner';
+import actions from '../../store/actions';
+import style from './index.less';
+
 
 function MusicHome() {
   const [showHistory, setShowHistory] = useState(false);
@@ -19,6 +22,7 @@ function MusicHome() {
         message.success('加载成功');
       }, 2000);
     }
+    // props.add();
   };
   const onChange = (e) => {
     setShowHistory(true);
@@ -30,6 +34,7 @@ function MusicHome() {
   const onBlur = () => {
     setShowHistory(false);
   };
+  // console.log(useSelector(state => state.num));
   return (
     <div styleName="app">
       <div styleName="sidemenu">
@@ -94,4 +99,6 @@ function MusicHome() {
   );
 }
 
-export default CSSModules(MusicHome, style);
+export default connect((state) => ({
+  ...state,
+}), actions)(CSSModules(MusicHome, style));
