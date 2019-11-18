@@ -1,4 +1,6 @@
-import MusicHome from './pages/MusicHome';
+import { lazy } from 'react';
+
+const MusicHome = lazy(() => import('./pages/MusicHome'));
 
 const router = [
   {

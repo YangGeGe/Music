@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -17,8 +17,9 @@ export default function App() {
     }());
   });
   return (
-    <Router>
-      {
+    <Suspense fallback={ <div>Loading</div> }>
+      <Router>
+        {
         router.map(({ path, componentName, exact = true, routes = [], key }) => {
           const Tag = componentName;
           return (
@@ -33,6 +34,7 @@ export default function App() {
           );
         })
       }
-    </Router>
+      </Router>
+    </Suspense>
   );
 }
