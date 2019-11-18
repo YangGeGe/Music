@@ -46,10 +46,10 @@ class MessageBox extends Component {
       <div styleName="toast">
         {
           notices.map(notice => (
-            <div styleName="toast-bg" key={ notice.key }>
-              <div styleName="toast-box">
-                <span styleName={ `${notice.type}-icon` } className="iconfont">{ICON_MAP[notice.type]}</span>
-                <span styleName="toast-text">{notice.content}</span>
+            <div styleName="toastBg" key={ notice.key }>
+              <div styleName="toastBox">
+                <span styleName={ `${notice.type}Icon` } className="iconfont">{ICON_MAP[notice.type]}</span>
+                <span styleName="toastText">{notice.content}</span>
               </div>
             </div>
           ))
