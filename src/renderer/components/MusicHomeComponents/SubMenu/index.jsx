@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import style from './index.less';
 import MenuItem from './MenuItem';
 
-function SiderBarMenu(props) {
+function SnbMenu(props) {
   const [listShow, changeListShow] = useState(false);
   useEffect(() => {
 
@@ -25,7 +25,7 @@ function SiderBarMenu(props) {
         }
         {
           (listShow || !title) && (
-            <div styleName="twoMenuList">
+            <div styleName="menuItem">
               {
                 menuList.map(item => <MenuItem key={ item.icon } item={ item }/>)
               }
@@ -36,8 +36,8 @@ function SiderBarMenu(props) {
     </>
   );
 }
-SiderBarMenu.propTypes = {
+SnbMenu.propTypes = {
   menuList: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };
-export default CSSModules(SiderBarMenu, style);
+export default CSSModules(SnbMenu, style);

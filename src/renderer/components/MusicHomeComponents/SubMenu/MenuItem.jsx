@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-function SiderBarMenuItem(props) {
+function MenuItem(props) {
   useEffect(() => {
 
   });
@@ -12,7 +12,7 @@ function SiderBarMenuItem(props) {
     </>
   );
 }
-SiderBarMenuItem.propTypes = {
+MenuItem.propTypes = {
   item: PropTypes.object.isRequired,
 };
-export default SiderBarMenuItem;
+export default MenuItem;
