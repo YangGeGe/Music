@@ -16,9 +16,9 @@ export default function App() {
       change();
     }());
   });
-  return (   
-     <Router>
-       <Suspense fallback={ <div>Loading</div> }>
+  return (
+    <Router>
+      <Suspense fallback={ <div>Loading</div> }>
         {
         router.map(({ path, componentName, exact = true, routes = [], key }) => {
           const Tag = componentName;
