@@ -16,9 +16,9 @@ export default function App() {
       change();
     }());
   });
-  return (
-    <Suspense fallback={ <div>Loading</div> }>
-      <Router>
+  return (   
+     <Router>
+       <Suspense fallback={ <div>Loading</div> }>
         {
         router.map(({ path, componentName, exact = true, routes = [], key }) => {
           const Tag = componentName;
@@ -34,7 +34,7 @@ export default function App() {
           );
         })
       }
-      </Router>
-    </Suspense>
+      </Suspense>
+    </Router>
   );
 }
