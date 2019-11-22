@@ -11,7 +11,7 @@ function Banner(props) {
     setInterval(() => {
       imgId += 1;
       // setId(id + 1);
-      if (imgId === props.imgList[props.imgList.length - 1].id) {
+      if (imgId > props.imgList[props.imgList.length - 1].id) {
         // setId(props.imgList[0].id);
         imgId = props.imgList[0].id;
       }
