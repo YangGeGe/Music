@@ -1,15 +1,19 @@
 const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.config');
 const utils = require('./utils');
 
-module.exports = webpackMerge(baseWebpackConfig, {
+const smp = new SpeedMeasurePlugin();
+
+module.exports =  smp.wrap(webpackMerge(baseWebpackConfig, {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
       filename: utils.resolve('./../dist/index.html'),
       template: 'index.html',
       inject: true,
+      cache: true,
     }),
   ],
   devtool: 'source-map',
@@ -27,4 +31,4 @@ module.exports = webpackMerge(baseWebpackConfig, {
       },
     },
   },
-});
+}));

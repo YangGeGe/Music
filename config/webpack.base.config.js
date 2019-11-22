@@ -15,7 +15,17 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: path.resolve('node_modules/.cache')
+            }
+          },
+          {
+            loader: 'babel-loader',
+          }
+        ]
       },
       {
         test: /\.css$/,
