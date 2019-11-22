@@ -1,0 +1,66 @@
+.banner{
+  width: 50rem;
+  position: relative;
+  cursor: pointer;
+  .imgList{
+    height: 23.75rem; 
+    width: 50rem;
+    position: relative;
+    .img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      display: block;
+    }
+    .zIndex{
+      z-index: 1;
+    }
+  }
+  .imgBtnList{
+    z-index: 10;
+    position: absolute;
+    width: 50rem;
+    display: flex;
+    justify-content: center;
+    top: 22.5rem;
+    .imgBtn{
+      border-radius: 50%;
+      height: 8px;
+      width: 8px;
+      outline: none;
+      float: left;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  }
+  .leftBtn, .rightBtn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    background: rgba(255,255,255,.5);
+    z-index: 10;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2rem;
+    // display: none;
+    opacity: 0;
+    transition: all .6s;
+  }
+  .leftBtn{
+    left: 1rem;
+  }
+  .rightBtn{
+    right: 1rem;
+  }
+}
+.banner:hover{
+  .leftBtn, .rightBtn{
+    // display: block;
+    opacity: 1;
+    transition: all .6;
+  }
+}

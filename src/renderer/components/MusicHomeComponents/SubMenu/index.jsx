@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
@@ -25,7 +26,7 @@ function SnbMenu(props) {
         }
         {
           (listShow || !title) && (
-            <div styleName="menuItem">
+            <div>
               {
                 menuList.map(item => <MenuItem key={ item.icon } item={ item }/>)
               }
