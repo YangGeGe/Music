@@ -4,7 +4,8 @@ import { useSelector, connect } from 'react-redux';
 import SiderBar from '../../components/MusicHomeComponents/SiderBar';
 import Search from '../../components/common/Search';
 import message from '../../components/common/Message';
-import Banner from './Banner/index';
+import Button from '../../components/common/Button';
+import Banner from './Banner';
 import actions from '../../store/actions';
 import style from './index.less';
 
@@ -104,6 +105,11 @@ function MusicHome() {
               </div>
             </div>
           </div>
+          <Button type="primary">Primary</Button>
+          <Button>Default</Button>
+          <Button type="dashed">Dashed</Button>
+          <Button type="danger">Danger</Button>
+          <Button type="dashed" disabled>Dashed</Button>
         </div>
       </div>
     </div>
