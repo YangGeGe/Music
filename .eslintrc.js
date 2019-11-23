@@ -35,6 +35,7 @@ module.exports = {
       }],
       "jsx-a11y/click-events-have-key-events": [0],
       "jsx-a11y/no-static-element-interactions": [0],
+      'import/no-extraneous-dependencies': [error,{devDependencies:true}],
       'comma-dangle': ['error', 'always-multiline'],           // 不强制 最后一个 ,
       'class-methods-use-this': 0,  // 不判断对象方法里是否使用了 this
       'consistent-return': 0,       // 允许函数根据代码分支具有不同的return行为
