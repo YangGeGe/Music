@@ -32,6 +32,12 @@ module.exports = {
         use:
           [
             {
+              loader: 'cache-loader',
+              options: {
+                cacheDirectory: path.resolve('node_modules/.cache')
+              }
+            },
+            {
               loader: 'style-loader',
             },
             {
