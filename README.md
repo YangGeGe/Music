@@ -2,9 +2,19 @@
 1. web: `npm run dev`
 
 2. electron: `npm run electron-start`
-## 命名规范
-### 组件，文件夹命名大写
-### class命名 驼峰式
+## 新加的依赖如果不变动添加到`package.dll.config.js`中并执行命令`npm run build:dll`
+```
+entry: {
+  vendor: [
+    'react',
+    'react-dom',
+    'react-router-dom',
+    'axios',
+    'redux',
+    'react-redux'
+  ]
+ },
+```
 ## git提交规范
 - feat：新功能（feature）
 - fix：修补bug
