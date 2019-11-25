@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import style from './index.less';
 
 function Button(props) {
-  useEffect(() => {
-
-  });
   const { type, children } = props;
+  useEffect(() => {
+    
+  });
   return (
     <button
       styleName={type || 'button'}
