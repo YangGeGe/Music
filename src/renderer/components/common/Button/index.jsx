@@ -1,6 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
-/* eslint-disable react/require-default-props */
-/* eslint-disable react/button-has-type */
 import React, { useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
@@ -10,10 +7,10 @@ function Button(props) {
   useEffect(() => {
 
   });
-  const { type, children, disabled } = props;
+  const { type, children } = props;
   return (
     <button
-      styleName={ disabled ? 'disabled' : (type || 'button') }
+      styleName={type || 'button'}
     >
       <span>{children}</span>
     </button>
@@ -22,6 +19,5 @@ function Button(props) {
 Button.propTypes = {
   type: PropTypes.string,
   children: PropTypes.string,
-  disabled: PropTypes.bool,
 };
 export default CSSModules(Button, style);

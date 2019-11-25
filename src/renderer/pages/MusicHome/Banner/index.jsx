@@ -7,17 +7,17 @@ import style from './index.less';
 function Banner(props) {
   const [id, setId] = useState(1); // 图片的id
   useEffect(() => {
-    let imgId = id;
-    setInterval(() => {
-      imgId += 1;
-      // setId(id + 1);
-      if (imgId > props.imgList[props.imgList.length - 1].id) {
-        // setId(props.imgList[0].id);
-        imgId = props.imgList[0].id;
-      }
-      setId(imgId);
-    }, 3000);
-    return () => { clearTimeout(); };
+    // let imgId = id;
+    // setInterval(() => {
+    //   imgId += 1;
+    //   // setId(id + 1);
+    //   if (imgId > props.imgList[props.imgList.length - 1].id) {
+    //     // setId(props.imgList[0].id);
+    //     imgId = props.imgList[0].id;
+    //   }
+    //   setId(imgId);
+    // }, 3000);
+    // return () => { clearTimeout(); };
   }, [id]);
   // 圆点点击
   const btnClick = itemId => {
