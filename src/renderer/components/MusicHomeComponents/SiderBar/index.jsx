@@ -10,6 +10,11 @@ function SiderBar() {
   });
   return (
     <div styleName="siderBar">
+      <div styleName='btnList'>
+        <a><span className="iconfont">{'\ue6e9'}</span></a>
+        <a><span className="iconfont">{'\ue73a'}</span></a>
+        <a><span className="iconfont">{'\ue73b'}</span></a>
+      </div>
       <div styleName="user">
         <img src="http://img1.imgtn.bdimg.com/it/u=3636610533,1617274814&fm=26&gp=0.jpg" alt=""/>
         <div styleName="userInfo">

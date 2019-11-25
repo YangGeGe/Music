@@ -4,6 +4,33 @@
   background: rgba(249,249,251);
   overflow: auto;
   color: rgba(105,103,116);
+  .btnList{
+    margin: 8px;
+    display: flex;
+    a{
+      cursor: pointer;
+      border-radius: 50%;
+      height: 13px;
+      width: 13px;
+      background: rgba(240,197,81);
+      margin-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+        font-size: 16px;
+        transform: scale(0.6);
+        font-weight: 500;
+        color: black;
+        display: none;
+      }
+    }
+  }
+  .btnList:hover{
+    span{
+      display: block;
+    }
+  }
   .user{
     display: flex;
     align-items: center;
