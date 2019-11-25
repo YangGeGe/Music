@@ -1,10 +1,12 @@
 .banner{
-  width: 50rem;
+  width: 49rem;
   position: relative;
-  cursor: pointer;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem #f0f1f2;
+  overflow: hidden;
   .imgList{
-    height: 23.75rem; 
-    width: 50rem;
+    height: 18rem;
+    width: 49rem;
     position: relative;
     .img{
       position: absolute;
@@ -19,48 +21,36 @@
   }
   .imgBtnList{
     z-index: 10;
+    height: 100%;
     position: absolute;
-    width: 50rem;
+    right: 0;
+    width: 12rem;
+    background: white;
+    top: 0;
     display: flex;
-    justify-content: center;
-    top: 22.5rem;
+    flex-direction: column;
+    justify-content: space-between;
     .imgBtn{
-      border-radius: 50%;
-      height: 8px;
-      width: 8px;
+      border-radius: 0 .5rem .5rem 0;
       outline: none;
-      float: left;
-      margin: 0 5px;
       cursor: pointer;
+      padding: .91rem 0 .91rem 1rem;
+      width: 80%;
+      // background: linear-gradient(to right, rgba(236,77,106), rgba(241,154,120));
+      .musicName{
+        line-height: 1.75rem;
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .singer{
+        line-height: 1rem;
+        font-size: .875rem;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
     }
-  }
-  .leftBtn, .rightBtn{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 2rem;
-    width: 2rem;
-    border-radius: 1rem;
-    background: rgba(255,255,255,.5);
-    z-index: 10;
-    cursor: pointer;
-    text-align: center;
-    line-height: 2rem;
-    // display: none;
-    opacity: 0;
-    transition: all .6s;
-  }
-  .leftBtn{
-    left: 1rem;
-  }
-  .rightBtn{
-    right: 1rem;
-  }
-}
-.banner:hover{
-  .leftBtn, .rightBtn{
-    // display: block;
-    opacity: 1;
-    transition: all .6;
   }
 }

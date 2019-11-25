@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules';
 import { useSelector, connect } from 'react-redux';
 import SiderBar from '../../components/MusicHomeComponents/SiderBar';
 import Search from '../../components/common/Search';
+import Footer from '../../components/common/Footer';
 import message from '../../components/common/Message';
 import Button from '../../components/common/Button';
 import Banner from './Banner';
@@ -41,10 +42,30 @@ function MusicHome() {
   };
   // banner图数组
   const imgList = [
-    { src: 'http://p1.music.126.net/lWe5sGr3IJecg-l9d6IZVA==/109951164496424429.jpg?imageView&quality=89', id: 1 },
-    { src: 'http://p1.music.126.net/sBY7Tv-6ny77Gdk8vI_3fQ==/109951164488075818.jpg?imageView&quality=89', id: 2 },
-    { src: 'http://p1.music.126.net/RRQPuQJdLPV_MjMBI-oQZg==/109951164498682153.jpg?imageView&quality=89', id: 3 },
-    { src: 'http://p1.music.126.net/PHOI2qH9bbbMOqQJommedA==/109951164498711947.jpg?imageView&quality=89', id: 4 },
+    { 
+      src: 'http://p1.music.126.net/lWe5sGr3IJecg-l9d6IZVA==/109951164496424429.jpg?imageView&quality=89',
+      id: 1,
+      music: 'Love poem',
+      singer: 'IU'
+    },
+    { 
+      src: 'http://p1.music.126.net/a3qkh5MtI7u2j8-vmPfxyA==/109951164509400719.jpg?imageView&quality=89',
+      id: 2,
+      music: 'Frozen 2 (Mandarin Original Motion Picture Soundtrack)',
+      singer: 'Various Artists'
+    },
+    { 
+      src: 'http://p1.music.126.net/6D1KIsi1ZfCkj1Iq85l1Vw==/109951164509380880.jpg?imageView&quality=89',
+      id: 3,
+      music: '捞月摇',
+      singer: '不才'
+    },
+    { 
+      src: 'http://p1.music.126.net/64wqw0V8lYY4KGTsxjaYOA==/109951164509387752.jpg?imageView&quality=89',
+      id: 4,
+      music: '爱你不是两三天', 
+      singer: '焦迈奇'
+    },
   ];
   console.log(useSelector(state => state.num));
   return (
@@ -54,62 +75,32 @@ function MusicHome() {
       </div>
       <div styleName="infos">
         <div styleName="context">
-          <div styleName="contextTop">
+          <div styleName="contextLeft">
+            <div styleName='leftTitle'>
+              <p><a>Hot</a>Daily new song</p>
+              <span className="iconfont" styleName='more'>{'\ue6f8'}</span>
+            </div>
             <Banner imgList={ imgList }/>
-            <div styleName="searchAndList">
-              <Search
-                onKeyDown={ onKeyDown }
-                onChange={ onChange }
-                onFocus={ onFocus }
-                onBlur={ onBlur }
-                showHistory={ showHistory }
-                inputContent={ inputContent }
-              />
-              <div styleName="rankingTitle">热门排行版</div>
-              <div styleName="contextLists">
-                <div styleName="contextList">
-                  <img src="http://p2.music.126.net/eBF7bHnJYBUfOFrJ_7SUfw==/109951163351825356.jpg?param=34y34" alt=""/>
-                  <div>
-                    <span styleName="musicTitle">后来</span>
-                    <span>刘若英</span>
-                  </div>
-                </div>
-                <div styleName="contextList">
-                  <img src="http://p2.music.126.net/eBF7bHnJYBUfOFrJ_7SUfw==/109951163351825356.jpg?param=34y34" alt=""/>
-                  <div>
-                    <span styleName="musicTitle">后来</span>
-                    <span>刘若英</span>
-                  </div>
-                </div>
-                <div styleName="contextList">
-                  <img src="http://p2.music.126.net/eBF7bHnJYBUfOFrJ_7SUfw==/109951163351825356.jpg?param=34y34" alt=""/>
-                  <div>
-                    <span styleName="musicTitle">后来</span>
-                    <span>刘若英</span>
-                  </div>
-                </div>
-                <div styleName="contextList">
-                  <img src="http://p2.music.126.net/eBF7bHnJYBUfOFrJ_7SUfw==/109951163351825356.jpg?param=34y34" alt=""/>
-                  <div>
-                    <span styleName="musicTitle">后来</span>
-                    <span>刘若英</span>
-                  </div>
-                </div>
-                <div styleName="contextList">
-                  <img src="http://p2.music.126.net/eBF7bHnJYBUfOFrJ_7SUfw==/109951163351825356.jpg?param=34y34" alt=""/>
-                  <div>
-                    <span styleName="musicTitle">后来</span>
-                    <span>刘若英</span>
-                  </div>
-                </div>
+            <Button type="primary">Primary</Button>
+            <Button>Default</Button>
+            <div styleName='leftTitle'>
+              <p><a>Albums</a>Pop music</p>
+              <div>
+                <span className="iconfont" styleName='more'>{'\ue720'}</span>
+                <span className="iconfont" styleName='more'>{'\ue6f8'}</span>
               </div>
             </div>
           </div>
-          <Button type="primary">Primary</Button>
-          <Button>Default</Button>
+          <div styleName="contextRight">
+            <div styleName='leftTitle'>
+              <p><a>Exclusive</a></p>
+              <span className="iconfont" styleName='more'>{'\ue6f8'}</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer/>
+      </div>
   );
 }
 

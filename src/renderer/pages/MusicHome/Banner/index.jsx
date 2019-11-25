@@ -23,22 +23,6 @@ function Banner(props) {
   const btnClick = itemId => {
     setId(itemId);
   };
-  // 左点击
-  const leftBtnClick = () => {
-    if (id === props.imgList[0].id) {
-      setId(props.imgList[props.imgList.length - 1].id);
-    } else {
-      setId(id - 1);
-    }
-  };
-  // 右点击
-  const rightBtnClick = () => {
-    if (id === props.imgList[props.imgList.length - 1].id) {
-      setId(props.imgList[0].id);
-    } else {
-      setId(id + 1);
-    }
-  };
   return (
     <div styleName="banner">
       <div styleName="imgList">
@@ -61,13 +45,25 @@ function Banner(props) {
               key={ item.id }
               onClick={ () => { btnClick(item.id); } }
               styleName="imgBtn"
-              style={ { background: id === item.id ? 'red' : 'white' } }
-            />
+              style={ { 
+                background: id === item.id ? 'rgba(236,77,106)' : 'white',
+                color: id === item.id ? 'white' : 'black'
+              } }
+              title={item.music}
+            >
+              <div styleName='musicName'>{item.music}</div>
+              <div 
+                styleName='singer'
+                style={ {
+                  color: id === item.id ? 'white' : 'rgba(191,191,191)'
+                } }
+              >
+                {item.singer}
+              </div>
+            </div>
           ))
         }
       </div>
-      <div styleName="leftBtn" onClick={ leftBtnClick }><span className="iconfont">{'\ue720'}</span></div>
-      <div styleName="rightBtn" onClick={ rightBtnClick }><span className="iconfont">{'\ue6f8'}</span></div>
     </div>
   );
 }
