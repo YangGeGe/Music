@@ -37,4 +37,4 @@ function SiderBar() {
   );
 }
 
-export default CSSModules(SiderBar, style);
+export default CSSModules(SiderBar, style, { allowMultiple: true });
