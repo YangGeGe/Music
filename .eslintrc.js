@@ -69,10 +69,6 @@ module.exports = {
       'import/no-commonjs': 0,    // 允许 commonjs 风格
       'import/namespace': 2,      // 使用import * as xx导入的时候, 检测使用到的xx的属性是否有export
       'import/default': 2,        // 确保 import default 的组件里有 export default
-      'import/no-extraneous-dependencies': ['error', { // 只允许导入package.json里依赖的包
-        devDependencies: false,
-        optionalDependencies: false,
-      }],
       'react/no-danger': 0, // 允许使用 dangerouslySetInnerHTML
       'react/jsx-props-no-spreading': 0,
       'react/no-direct-mutation-state': 2, // 禁止直接修改 state
