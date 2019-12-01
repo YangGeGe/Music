@@ -6,6 +6,7 @@ import Search from '../../components/common/search';
 import message from '../../components/common/Message';
 import Banner from './Banner';
 import actions from '../../store/actions';
+import Tabs from '../../components/common/Tabs';
 import style from './index.less';
 
 
@@ -39,6 +40,9 @@ function MusicHome() {
     <div styleName="app">
       <div styleName="sidemenu">
         <SiderBar/>
+      </div>
+      <div>
+        <Tabs styleName="tabs"/>
       </div>
       <div styleName="infos">
         <div styleName="context">
