@@ -20,20 +20,20 @@ export default function App() {
     <Router>
       <Suspense fallback={ <div>Loading</div> }>
         {
-        router.map(({ path, componentName, exact = true, routes = [], key }) => {
-          const Tag = componentName;
-          return (
-            <Route
-              exact={ exact }
-              key={ key }
-              path={ path }
-              render={ props => (
-                <Tag { ...props } routes={ routes }/>
-              ) }
-            />
-          );
-        })
-      }
+          router.map(({ path, componentName, exact = true, routes = [], key }) => {
+            const Tag = componentName;
+            return (
+              <Route
+                exact={ exact }
+                key={ key }
+                path={ path }
+                render={ props => (
+                  <Tag { ...props } routes={ routes }/>
+                ) }
+              />
+            );
+          })
+        }
       </Suspense>
     </Router>
   );
