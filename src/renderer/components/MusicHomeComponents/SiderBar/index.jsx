@@ -10,7 +10,7 @@ function SiderBar() {
   });
   return (
     <div styleName="siderBar">
-      <div styleName='btnList'>
+      <div styleName="btnList">
         <a><span className="iconfont">{'\ue6e9'}</span></a>
         <a><span className="iconfont">{'\ue73a'}</span></a>
         <a><span className="iconfont">{'\ue73b'}</span></a>

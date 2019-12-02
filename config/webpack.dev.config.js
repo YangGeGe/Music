@@ -8,11 +8,11 @@ const utils = require('./utils');
 
 // const smp = new SpeedMeasurePlugin(); 构建打点
 
-module.exports =  webpackMerge(baseWebpackConfig, {
+module.exports = webpackMerge(baseWebpackConfig, {
   mode: 'development',
   plugins: [
     new webpack.DllReferencePlugin({
-      manifest: utils.resolve('./../dist/dll/manifest.json')
+      manifest: utils.resolve('./../dist/dll/manifest.json'),
     }),
     new HtmlWebpackPlugin({
       filename: utils.resolve('./../dist/index.html'),
@@ -21,8 +21,8 @@ module.exports =  webpackMerge(baseWebpackConfig, {
       cache: true,
     }),
     new AddAssetHtmlPlugin({
-      filepath: require.resolve('./../dist/dll/vendor.dll.js'), 
-      includeSourcemap: false
+      filepath: require.resolve('./../dist/dll/vendor.dll.js'),
+      includeSourcemap: false,
     }),
   ],
   devtool: 'source-map',

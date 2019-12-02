@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
-import { ICON_MAP } from '../constraint';
+import { MESSAGE_ICON_MAP } from '../constraint';
 import style from './Message.less';
 
 class MessageBox extends Component {
@@ -48,7 +48,7 @@ class MessageBox extends Component {
           notices.map(notice => (
             <div styleName="toastBg" key={ notice.key }>
               <div styleName="toastBox">
-                <span styleName={ `${notice.type}Icon` } className="iconfont">{ICON_MAP[notice.type]}</span>
+                <span styleName={ `${notice.type}Icon` } className="iconfont">{MESSAGE_ICON_MAP[notice.type]}</span>
                 <span styleName="toastText">{notice.content}</span>
               </div>
             </div>
