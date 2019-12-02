@@ -11,8 +11,8 @@ import style from './index.less';
 
 
 function MusicHome() {
-  // const [showHistory, setShowHistory] = useState(false);
-  // const [inputContent, setInputContent] = useState('');
+  const [showHistory, setShowHistory] = useState(false);
+  const [inputContent, setInputContent] = useState('');
   useEffect(() => {
 
   });
@@ -69,11 +69,11 @@ function MusicHome() {
   console.log(useSelector(state => state.num));
   return (
     <div styleName="app">
-      {/* <div styleName="sidemenu">
+      <div styleName="sidemenu">
         <SiderBar/>
-      </div> */}
+      </div>
       <WindowAction/>
-      {/* <div styleName="infos">
+      <div styleName="infos">
         <div styleName="context">
           <div styleName="contextLeft">
             <div styleName="leftTitle">
@@ -98,7 +98,7 @@ function MusicHome() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

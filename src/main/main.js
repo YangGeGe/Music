@@ -46,9 +46,9 @@ function createWindow() {
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
-}
 
-windowResize(mainWindow);
+  windowResize(mainWindow);
+}
 
 // 当 Electron 完成初始化并准备创建浏览器窗口时调用此方法
 app.on('ready', createWindow);
