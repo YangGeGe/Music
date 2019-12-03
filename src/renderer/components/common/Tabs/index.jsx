@@ -1,35 +1,45 @@
 import React, { useState } from 'react';
+import CSSModules from 'react-css-modules';
+import style from './index.less';
 
+function Tabs(props) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-export default function Tabs() {
-//   const [val, setVal] = useState('');
-//   const [val1, setVal1] = useState({
-//     a: '',
-//     b: 0,
-//   });
+  //   useEffect(() => {
+  //     change();
+  //   }, [val])
 
-//   useEffect(() => {
-//     change();
-//   }, [val])
+  const checkTitle = (index) => (index === currentIndex ? 'tabTitleActive' : 'tabTitle');
 
-//   useEffect(() => {//數據改變的時候用
-//     bbb();
-//   }, [val1])
+  const checkItem = (index) => (index === currentIndex ? 'tabItemShow' : 'tabItem');
 
-
-//   const change = () => {
-//     console.log(val);
-//   };
-//   const bbb = (e) => {
-//     console.log(e);
-//   };
   return (
     <div>
-      {/* <input value={val} onChange={e => {
-          setVal1(...val1, a: e.target.value)
-          bbb(e);
-      }} /> */}
-      <button type="submit" value="Submit">Submit</button>
+      <div styleName="tabTitleWrap">
+        {
+          React.Children.map(props.children, (element, index) => (
+            <div
+              onClick={ () => { setCurrentIndex(index); } }
+              styleName="tabTitle"
+              style={ { 
+                borderBottom: checkTitle(index) === 'tabTitleActive' ? '2px solid blue' : null,
+                paddingBottom: checkTitle(index) === 'tabTitleActive' ? '5px' : null,
+                color: checkTitle(index) === 'tabTitleActive' ? 'blue' : null, 
+              } }
+            >{ element.props.name }
+            </div>
+          ))
+        }
+      </div>
+      <div styleName="tabItemWrap">
+        {
+          React.Children.map(props.children, (element, index) => (
+            <div styleName="tabItem" style={ { display: checkItem(index) === 'tabItemShow' ? 'block' : 'none' } }>{ element }</div>
+          ))
+        }
+      </div>
     </div>
   );
 }
+
+export default CSSModules(Tabs, style);

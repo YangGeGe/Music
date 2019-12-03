@@ -42,7 +42,11 @@ function MusicHome() {
         <SiderBar/>
       </div>
       <div>
-        <Tabs styleName="tabs"/>
+        <Tabs>
+          <div name="第一个">qwewqe</div>
+          <div name="第二个">wqewqew</div>
+          <div name="第三个">qwewqe</div>
+        </Tabs>
       </div>
       <div styleName="infos">
         <div styleName="context">
