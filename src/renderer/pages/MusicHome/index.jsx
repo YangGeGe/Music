@@ -2,13 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import { useSelector, connect } from 'react-redux';
 import SiderBar from '../../components/MusicHomeComponents/SiderBar';
-<<<<<<< HEAD
-import Search from '../../components/common/search';
-import message from '../../components/common/Message';
-=======
 // import message from '../../components/common/Message';
 import Button from '../../components/common/Button';
->>>>>>> 10e1cd2798bda86019e1f85a79b2512c2485fc32
 import Banner from './Banner';
 import WindowAction from '../../components/common/WindowAction';
 import actions from '../../store/actions';
@@ -78,7 +73,6 @@ function MusicHome() {
       <div styleName="sidemenu">
         <SiderBar/>
       </div>
-<<<<<<< HEAD
       <div>
         <Tabs>
           <div name="第一个">qwewqe</div>
@@ -86,9 +80,7 @@ function MusicHome() {
           <div name="第三个">qwewqe</div>
         </Tabs>
       </div>
-=======
       <WindowAction/>
->>>>>>> 10e1cd2798bda86019e1f85a79b2512c2485fc32
       <div styleName="infos">
         <div styleName="context">
           <div styleName="contextLeft">
