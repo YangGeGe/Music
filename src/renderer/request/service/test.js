@@ -2,7 +2,7 @@ import { get } from '../request';
 
 export const login = async () => {
   try {
-    const result = await get('/login/cellphone', { phone: 15545191639, password: 'liyang1997...' });
+    const result = await get('/login/cellphone', { phone: '', password: '' });
     console.log(result);
   } catch (e) {
     console.log(e);

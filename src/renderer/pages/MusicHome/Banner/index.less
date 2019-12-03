@@ -1,0 +1,56 @@
+.banner{
+  width: 49rem;
+  position: relative;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1rem #f0f1f2;
+  overflow: hidden;
+  .imgList{
+    height: 18rem;
+    width: 49rem;
+    position: relative;
+    .img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      display: block;
+    }
+    .zIndex{
+      z-index: 1;
+    }
+  }
+  .imgBtnList{
+    z-index: 10;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 12rem;
+    background: white;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .imgBtn{
+      border-radius: 0 .5rem .5rem 0;
+      outline: none;
+      cursor: pointer;
+      padding: .91rem 0 .91rem 1rem;
+      width: 80%;
+      // background: linear-gradient(to right, rgba(236,77,106), rgba(241,154,120));
+      .musicName{
+        line-height: 1.75rem;
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+      .singer{
+        line-height: 1rem;
+        font-size: .875rem;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
