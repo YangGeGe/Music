@@ -7,12 +7,13 @@ import Button from '../../components/common/Button';
 import Banner from './Banner';
 import WindowAction from '../../components/common/WindowAction';
 import actions from '../../store/actions';
+import Tabs from '../../components/common/Tabs';
 import style from './index.less';
 
 
 function MusicHome() {
-  // const [showHistory, setShowHistory] = useState(false);
-  // const [inputContent, setInputContent] = useState('');
+  const [showHistory, setShowHistory] = useState(false);
+  const [inputContent, setInputContent] = useState('');
   useEffect(() => {
 
   });
@@ -69,11 +70,18 @@ function MusicHome() {
   console.log(useSelector(state => state.num));
   return (
     <div styleName="app">
-      {/* <div styleName="sidemenu">
+      <div styleName="sidemenu">
         <SiderBar/>
-      </div> */}
+      </div>
+      <div>
+        <Tabs>
+          <div name="第一个">qwewqe</div>
+          <div name="第二个">wqewqew</div>
+          <div name="第三个">qwewqe</div>
+        </Tabs>
+      </div>
       <WindowAction/>
-      {/* <div styleName="infos">
+      <div styleName="infos">
         <div styleName="context">
           <div styleName="contextLeft">
             <div styleName="leftTitle">
@@ -98,7 +106,7 @@ function MusicHome() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

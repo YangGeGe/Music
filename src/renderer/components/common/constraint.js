@@ -1,4 +1,3 @@
-import actions from '../../store/actions';
 
 export const MESSAGE_ICON_TEXT_MAP = {
   success: 'success',
@@ -16,39 +15,34 @@ export const MESSAGE_ICON_MAP = {
   [MESSAGE_ICON_TEXT_MAP.loading]: '\ue60e',
 };
 
-export const WINDOW_ACTIONS = [
-  {
-    purpose: 'close',
-    type: 'action',
-  },
-  {
-    purpose: 'transform',
-    type: 'action',
-  },
-  {
-    purpose: 'minSmall',
-    type: 'action',
-  },
-];
+export const ACTION_TEXT = {
+  close: 'close',
+  transform: 'transform',
+  minSmall: 'minSmall',
+};
 
-export const ACTION_MAP = {
-  close: {
-    text: '关闭',
-    icon: '\ue6e9',
-  },
-  //  TODO: 图标
-  transform: {
-    enlarge: {
-      text: '放大',
-      icon: '\ue73b',
+export const ACTIONS = {
+  WIN: [
+    {
+      text: '关闭',
+      icon: '\ue6e9',
+      key: 'close',
     },
-    narrow: {
-      text: '缩小',
-      icon: '\ue73a',
+    {
+      key: 'transform',
+      enlarge: {
+        text: '放大',
+        icon: '\ue73b',
+      },
+      narrow: {
+        text: '缩小',
+        icon: '\ue73a',
+      },
     },
-  },
-  minSmall: {
-    text: '最小化',
-    icon: '\ue666',
-  },
+    {
+      text: '最小化',
+      icon: '\ue666',
+      key: 'minSmall',
+    },
+  ],
 };

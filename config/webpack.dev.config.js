@@ -31,6 +31,7 @@ module.exports = webpackMerge(baseWebpackConfig, {
     hot: true,
     contentBase: false,
     compress: true,
+    clientLogLevel: 'silent',
     port: '8081',
     publicPath: '/',
     proxy: {
