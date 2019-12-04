@@ -2,6 +2,9 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 import styles from './Action.less';
+import {
+  getPlatform,
+} from '../../../utils';
 
 function Action(props) {
   const {
@@ -10,7 +13,12 @@ function Action(props) {
     onAction,
   } = props;
   return (
-    <span title={ title } styleName="windowAction" className="iconfont" onClick={ onAction }>
+    <span
+      title={ title }
+      styleName={ `${getPlatform()}WindowAction` }
+      className="iconfont"
+      onClick={ onAction }
+    >
       {children}
     </span>
   );

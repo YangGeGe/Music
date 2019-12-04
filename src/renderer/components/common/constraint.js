@@ -15,34 +15,69 @@ export const MESSAGE_ICON_MAP = {
   [MESSAGE_ICON_TEXT_MAP.loading]: '\ue60e',
 };
 
-export const ACTION_TEXT = {
+export const ACTION_TEXT_KEY = {
   close: 'close',
   transform: 'transform',
   minSmall: 'minSmall',
 };
 
-export const ACTIONS = {
+export const ACTION_ICON = {
   WIN: [
     {
-      text: '关闭',
       icon: '\ue6e9',
       key: 'close',
     },
     {
       key: 'transform',
       enlarge: {
-        text: '放大',
         icon: '\ue73b',
       },
       narrow: {
-        text: '缩小',
         icon: '\ue73a',
       },
     },
     {
-      text: '最小化',
+      icon: '\ue666',
+      key: 'minSmall',
+    },
+  ],
+  MAC: [
+    {
+      icon: '\ue6e9',
+      key: 'close',
+    },
+    {
+      key: 'transform',
+      enlarge: {
+        icon: '\ue73b',
+      },
+      narrow: {
+        icon: '\ue73a',
+      },
+    },
+    {
       icon: '\ue666',
       key: 'minSmall',
     },
   ],
 };
+
+export const ACTION_TEXT = [
+  {
+    text: '关闭',
+    key: 'close',
+  },
+  {
+    key: 'transform',
+    enlarge: {
+      text: '放大',
+    },
+    narrow: {
+      text: '缩小',
+    },
+  },
+  {
+    text: '最小化',
+    key: 'minSmall',
+  },
+];

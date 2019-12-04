@@ -8,9 +8,13 @@ import Banner from './Banner';
 import WindowAction from '../../components/common/WindowAction';
 import actions from '../../store/actions';
 import style from './index.less';
+import {
+  getPlatform,
+} from '../../utils';
 
 
 function MusicHome() {
+  const isWin = getPlatform() === 'WIN';
   const [showHistory, setShowHistory] = useState(false);
   const [inputContent, setInputContent] = useState('');
   useEffect(() => {
@@ -72,7 +76,9 @@ function MusicHome() {
       <div styleName="sidemenu">
         <SiderBar/>
       </div>
-      <WindowAction/>
+      {
+        isWin ? <WindowAction/> : ''
+      }
       <div styleName="infos">
         <div styleName="context">
           <div styleName="contextLeft">

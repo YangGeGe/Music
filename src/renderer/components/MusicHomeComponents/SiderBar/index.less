@@ -1,59 +1,39 @@
-.siderBar{
+.siderBar {
   width: 100%;
   height: calc(100% - 50px);
-  background: rgba(249,249,251);
+  background: rgba(249, 249, 251);
   overflow: auto;
-  color: rgba(105,103,116);
-  .btnList{
-    margin: 8px;
-    display: flex;
-    a{
-      cursor: pointer;
-      border-radius: 50%;
-      height: 13px;
-      width: 13px;
-      background: rgba(240,197,81);
-      margin-right: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      span{
-        font-size: 16px;
-        transform: scale(0.6);
-        font-weight: 500;
-        color: black;
-        display: none;
-      }
-    }
-  }
-  .btnList:hover{
-    span{
-      display: block;
-    }
-  }
-  .user{
+  color: rgba(105, 103, 116);
+
+  .user {
     display: flex;
     align-items: center;
     padding: 1.3rem 2rem 2rem 2rem;
-    img{
+
+    img {
       width: 3.75rem;
       height: 3.75rem;
       border-radius: 50%;
       margin-right: 1rem;
     }
-    .userInfo{
-      span{
+
+    .userInfo {
+      span {
         display: block;
         font-size: 12px;
-        color: rgba(104,157,173);
+        color: rgba(104, 157, 173);
         width: 7rem;
-        overflow: hidden; /*自动隐藏文字*/
-        text-overflow: ellipsis;/*文字隐藏后添加省略号*/
-        white-space: nowrap;/*强制不换行*/
+        overflow: hidden;
+        /*自动隐藏文字*/
+        text-overflow: ellipsis;
+        /*文字隐藏后添加省略号*/
+        white-space: nowrap;
+        /*强制不换行*/
       }
-      .userName{
+
+      .userName {
         font-size: 14px;
-        color: rgba(105,103,116);
+        color: rgba(105, 103, 116);
       }
     }
   }

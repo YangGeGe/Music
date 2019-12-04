@@ -1,15 +1,20 @@
 const {
   app,
+  Menu,
+  Tray,
   BrowserWindow,
 } = require('electron');
 const os = require('os');
-const {
-  windowResize,
-} = require('./ipcMain');
+const path = require('path');
+const windowSystem = require('./ipcMain/windowSystem');
+const trayMenuTemplate = require('./trayMenu');
 
 const platForm = os.platform() === 'win32';
+
 // 保持window对象的全局引用,避免JavaScript对象被垃圾回收时,窗口被自动关闭.
 let mainWindow = null;
+let appTray = null;
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     minWidth: 1020,
@@ -34,6 +39,13 @@ function createWindow() {
   // 打开开发者工具，默认不打开
   mainWindow.webContents.openDevTools();
 
+  // 系统托盘
+  const iconPath = path.join(__dirname, '../renderer/assets/imgs/tray.png');
+  appTray = new Tray(iconPath);
+  const contextMenu = Menu.buildFromTemplate(trayMenuTemplate);
+  appTray.setToolTip('洋哥哥音乐');
+  appTray.setContextMenu(contextMenu);
+
   platForm === true && mainWindow.hookWindowMessage(278, () => {
     mainWindow.setEnabled(false);
     setTimeout(() => {
@@ -42,12 +54,7 @@ function createWindow() {
     return true;
   });
 
-  // 关闭window时触发下列事件.
-  mainWindow.on('closed', function () {
-    mainWindow = null;
-  });
-
-  windowResize(mainWindow);
+  windowSystem(mainWindow);
 }
 
 // 当 Electron 完成初始化并准备创建浏览器窗口时调用此方法
