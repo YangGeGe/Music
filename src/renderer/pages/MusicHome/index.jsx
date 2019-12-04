@@ -6,7 +6,9 @@ import SiderBar from '../../components/MusicHomeComponents/SiderBar';
 import Button from '../../components/common/Button';
 import Banner from './Banner';
 import WindowAction from '../../components/common/WindowAction';
+import Footer from '../../components/common/Footer';
 import actions from '../../store/actions';
+import Tabs from '../../components/common/Tabs';
 import style from './index.less';
 import {
   getPlatform,
@@ -105,6 +107,7 @@ function MusicHome() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

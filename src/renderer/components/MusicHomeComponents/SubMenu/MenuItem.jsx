@@ -5,24 +5,25 @@ import style from './MenuItem.less';
 
 function MenuItem(props) {
   const [isChecked, setCheckend] = useState(false);
-  const { item } = props;
+  const { itemKey, item } = props;
   useEffect(() => {
 
   });
   const onClick = () => {
     setCheckend(!isChecked);
+    console.log(itemKey)
   };
   return (
     <>
       <div
-        key={ item.icon }
+        key={ itemKey }
         styleName="menuItem"
         onClick={ onClick }
-        style={ {
-          background: isChecked ? 'skyblue' : '',
-          color: isChecked ? '#1890ff' : '',
-          borderRight: isChecked ? '3px solid #1890ff' : '',
-        } }
+        // style={ {
+        //   background: isChecked ? 'skyblue' : '',
+        //   color: isChecked ? '#1890ff' : '',
+        //   borderRight: isChecked ? '3px solid #1890ff' : '',
+        // } }
       >
         <span className="iconfont">{item.icon}</span> {item.name}
       </div>
@@ -32,4 +33,4 @@ function MenuItem(props) {
 MenuItem.propTypes = {
   item: PropTypes.object.isRequired,
 };
-export default CSSModules(MenuItem, style);
+export default CSSModules(MenuItem, style, { allowMultiple: true });

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
@@ -10,7 +12,7 @@ function SnbMenu(props) {
   useEffect(() => {
 
   });
-  const { title, menuList } = props;
+  const { menuGroupKey, title, menuList } = props;
   const shrinkOrShow = () => {
     changeListShow(!listShow);
   };
@@ -28,7 +30,13 @@ function SnbMenu(props) {
           (listShow || !title) && (
             <div>
               {
-                menuList.map(item => <MenuItem key={ item.icon } item={ item }/>)
+                menuList.map((item, index) => (
+                  <MenuItem
+                    key={ `${menuGroupKey}-${index}` }
+                    item={ item }
+                    itemKey={ `${menuGroupKey}-${index}` }
+                  />
+                ))
               }
             </div>
           )
@@ -41,4 +49,4 @@ SnbMenu.propTypes = {
   menuList: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };
-export default CSSModules(SnbMenu, style);
+export default CSSModules(SnbMenu, style, { allowMultiple: true });

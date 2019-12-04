@@ -29,6 +29,7 @@ function SiderBar() {
               key={ modular.key }
               title={ modular.title }
               menuList={ modular.modular }
+              menuGroupKey={ modular.key }
             />
           ))
         }
@@ -37,4 +38,4 @@ function SiderBar() {
   );
 }
 
-export default CSSModules(SiderBar, style, { allowMultiple: true });
+export default CSSModules(SiderBar, style);
