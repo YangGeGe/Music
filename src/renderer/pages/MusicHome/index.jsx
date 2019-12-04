@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import { useSelector, connect } from 'react-redux';
@@ -6,6 +7,7 @@ import SiderBar from '../../components/MusicHomeComponents/SiderBar';
 import Button from '../../components/common/Button';
 import Banner from './Banner';
 import WindowAction from '../../components/common/WindowAction';
+import Footer from '../../components/common/Footer';
 import actions from '../../store/actions';
 import Tabs from '../../components/common/Tabs';
 import style from './index.less';
@@ -74,11 +76,11 @@ function MusicHome() {
         <SiderBar/>
       </div>
       <div>
-        <Tabs>
+        {/*<Tabs>
           <div name="第一个">qwewqe</div>
           <div name="第二个">wqewqew</div>
           <div name="第三个">qwewqe</div>
-        </Tabs>
+        </Tabs> */}
       </div>
       <WindowAction/>
       <div styleName="infos">
@@ -107,6 +109,7 @@ function MusicHome() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
