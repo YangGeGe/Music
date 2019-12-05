@@ -1,51 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 import { useSelector, connect } from 'react-redux';
 import SiderBar from '../../components/MusicHomeComponents/SiderBar';
-// import message from '../../components/common/Message';
 import Button from '../../components/common/Button';
 import Banner from './Banner';
-import WindowAction from '../../components/common/WindowAction';
+import ActionList from '../../components/common/ActionList';
 import Footer from '../../components/common/Footer';
 import actions from '../../store/actions';
-import Tabs from '../../components/common/Tabs';
+// import Tabs from '../../components/common/Tabs';
 import style from './index.less';
 import {
   getPlatform,
 } from '../../utils';
 
+const isWin = getPlatform() === 'WIN';
 
 function MusicHome() {
-  const isWin = getPlatform() === 'WIN';
-  const [showHistory, setShowHistory] = useState(false);
-  const [inputContent, setInputContent] = useState('');
-  useEffect(() => {
-
-  });
-  // 搜索框键盘落下
-  // const onKeyDown = (e) => {
-  //   if (e.keyCode === 13) {
-  //     message.loading('加载中...');
-  //     setTimeout(function () {
-  //       message.success('加载成功');
-  //     }, 2000);
-  //   }
-  //   props.add();
-  // };
-  // 搜索框内容发生改变
-  // const onChange = (e) => {
-  //   setShowHistory(true);
-  //   setInputContent(e.target.value);
-  // };
-  // 搜索框获取焦点
-  // const onFocus = () => {
-
-  // };
-  // 搜索框失去焦点
-  // const onBlur = () => {
-  //   setShowHistory(false);
-  // };
-  // banner图数组
   const imgList = [
     {
       src: 'http://p1.music.126.net/lWe5sGr3IJecg-l9d6IZVA==/109951164496424429.jpg?imageView&quality=89',
@@ -78,9 +48,7 @@ function MusicHome() {
       <div styleName="sidemenu">
         <SiderBar/>
       </div>
-      {
-        isWin ? <WindowAction/> : ''
-      }
+      <ActionList/>
       <div styleName="infos">
         <div styleName="context">
           <div styleName="contextLeft">

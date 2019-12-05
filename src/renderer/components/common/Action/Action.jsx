@@ -2,32 +2,26 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 import styles from './Action.less';
-import {
-  getPlatform,
-} from '../../../utils';
 
 function Action(props) {
   const {
     title,
     children,
-    onAction,
   } = props;
   return (
-    <span
+    <i
       title={ title }
-      styleName={ `${getPlatform()}WindowAction` }
       className="iconfont"
-      onClick={ onAction }
+      styleName="action"
     >
       {children}
-    </span>
+    </i>
   );
 }
 
 Action.propTypes = {
   title: PropTypes.string,
   children: PropTypes.string.isRequired,
-  onAction: PropTypes.func.isRequired,
 };
 
 Action.defaultProps = {

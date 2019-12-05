@@ -21,63 +21,26 @@ export const ACTION_TEXT_KEY = {
   minSmall: 'minSmall',
 };
 
-export const ACTION_ICON = {
-  WIN: [
-    {
-      icon: '\ue6e9',
-      key: 'close',
-    },
-    {
-      key: 'transform',
-      enlarge: {
-        icon: '\ue73b',
-      },
-      narrow: {
-        icon: '\ue73a',
-      },
-    },
-    {
-      icon: '\ue666',
-      key: 'minSmall',
-    },
-  ],
-  MAC: [
-    {
-      icon: '\ue6e9',
-      key: 'close',
-    },
-    {
-      key: 'transform',
-      enlarge: {
-        icon: '\ue73b',
-      },
-      narrow: {
-        icon: '\ue73a',
-      },
-    },
-    {
-      icon: '\ue666',
-      key: 'minSmall',
-    },
-  ],
-};
-
-export const ACTION_TEXT = [
+export const ACTION_MAP = [
   {
     text: '关闭',
     key: 'close',
+    icon: '\ue6e9',
   },
   {
     key: 'transform',
     enlarge: {
       text: '放大',
+      icon: '\ue73b',
     },
     narrow: {
       text: '缩小',
+      icon: '\ue73a',
     },
   },
   {
     text: '最小化',
+    icon: '\ue666',
     key: 'minSmall',
   },
 ];
