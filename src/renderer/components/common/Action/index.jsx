@@ -15,6 +15,7 @@ function ActionGroup(props) {
       {
         children.map(action => (
           <span
+            styleName="backColor"
             key={ action.key }
             onClick={ () => onClick(action) }
           >

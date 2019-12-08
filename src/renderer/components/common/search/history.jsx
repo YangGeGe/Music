@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import CSSModules from 'react-css-modules';
+import React, { useEffect } from './node_modules/react';
+import CSSModules from './node_modules/react-css-modules';
 import style from './index.less';
 
 function History(props) {

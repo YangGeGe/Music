@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './index.less';
-import Action from '../Action';
+import Action from '../../../common/Action';
 import {
   ACTION_MAP,
   ACTION_TEXT_KEY,
-} from '../constraint';
+} from '../../../common/constraint';
 
 const electron = window.require('electron');
 const { ipcRenderer } = electron;

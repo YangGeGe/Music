@@ -1,13 +1,21 @@
 import { lazy } from 'react';
 
 const MusicHome = lazy(() => import('./pages/MusicHome'));
+const MusicLibrary = lazy(() => import('./pages/MusicLibrary'));
 
 const router = [
   {
-    path: '/',
+    path: '/musicHome',
     componentName: MusicHome,
     key: 'MucicHome',
-    exact: true,
+    routes: [
+      {
+        path: '/musicHome/musicLibrary',
+        componentName: MusicLibrary,
+        key: 'MusicLibrary',
+        indexRouter: true, // 默认路由
+      },
+    ],
   },
   /*
    * 动态路由

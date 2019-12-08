@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-shadow */
 import React, { useState, useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
