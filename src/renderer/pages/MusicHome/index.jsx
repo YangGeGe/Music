@@ -6,6 +6,7 @@ import CSSModules from 'react-css-modules';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
+import ActionList from '../../components/MusicHome/ActionList';
 import actions from '../../store/actions';
 import style from './index.less';
 
@@ -15,10 +16,9 @@ function MusicHome(props) {
     routes,
   } = props;
   return (
-    <div styleName="app">
-      <div styleName="sidemenu">
-        <SiderBar/>
-      </div>
+    <div styleName="home">
+      <ActionList/>
+      <SiderBar/>
       {
           routes.map(({ path, componentName, key }) => {
             const Tag = componentName;

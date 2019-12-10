@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './index.less';
-import Action from '../../../common/Action';
+import Action from '../../common/Action';
 import {
   ACTION_MAP,
   ACTION_TEXT_KEY,
-} from '../../../common/constraint';
+} from '../../common/constraint';
 
 const electron = window.require('electron');
 const { ipcRenderer } = electron;
@@ -46,7 +46,7 @@ function ActionList() {
   };
 
   return (
-    <>
+    <div styleName="actions">
       <ActionGroup
         onClick={ actionOperation }
       >
@@ -61,7 +61,7 @@ function ActionList() {
           ))
         }
       </ActionGroup>
-    </>
+    </div>
   );
 }
 
