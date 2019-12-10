@@ -1,24 +1,28 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 
 function Banner(props) {
+  const {
+    imgList,
+  } = props;
   const [id, setId] = useState(1); // 图片的id
   useEffect(() => {
-    // let imgId = id;
-    // setInterval(() => {
-    //   imgId += 1;
-    //   // setId(id + 1);
-    //   if (imgId > props.imgList[props.imgList.length - 1].id) {
-    //     // setId(props.imgList[0].id);
-    //     imgId = props.imgList[0].id;
-    //   }
-    //   setId(imgId);
-    // }, 3000);
-    // return () => { clearTimeout(); };
-  }, [id]);
+    let imgId = id;
+    setInterval(() => {
+      imgId += 1;
+      // setId(id + 1);
+      if (imgId > props.imgList[props.imgList.length - 1].id) {
+        // setId(props.imgList[0].id);
+        imgId = props.imgList[0].id;
+      }
+      setId(imgId);
+    }, 3000);
+    return clearTimeout();
+  // 仅调用一次 TODO: 各种bug
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // 圆点点击
   const btnClick = itemId => {
     setId(itemId);
@@ -43,7 +47,7 @@ function Banner(props) {
     <div styleName="banner">
       <div styleName="imgList">
         {
-          props.imgList.map(item => (
+          imgList.map(item => (
             <img
               key={ item.id }
               src={ item.src }
@@ -56,7 +60,7 @@ function Banner(props) {
       </div>
       <div styleName="imgBtnList">
         {
-          props.imgList.map(item => (
+          imgList.map(item => (
             <div
               key={ item.id }
               onClick={ () => { btnClick(item.id); } }
@@ -77,4 +81,5 @@ function Banner(props) {
 Banner.propTypes = {
   imgList: PropTypes.array.isRequired,
 };
+
 export default CSSModules(Banner, style);

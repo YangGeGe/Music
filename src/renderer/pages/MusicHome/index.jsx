@@ -19,7 +19,8 @@ function MusicHome(props) {
     <div styleName="home">
       <ActionList/>
       <SiderBar/>
-      {
+      <div styleName="homePage">
+        {
           routes.map(({ path, componentName, key }) => {
             const Tag = componentName;
             return (
@@ -33,6 +34,7 @@ function MusicHome(props) {
             );
           })
         }
+      </div>
     </div>
   );
 }
