@@ -2,24 +2,3 @@
 1. web: `npm run dev`
 
 2. electron: `npm run electron-start`
-## 新加的依赖如果不变动添加到`package.dll.config.js`中并执行命令`npm run build:dll`
-```
-entry: {
-  vendor: [
-    'react',
-    'react-dom',
-    'react-router-dom',
-    'axios',
-    'redux',
-    'react-redux'
-  ]
- },
-```
-## git提交规范
-- feat：新功能（feature）
-- fix：修补bug
-- docs：文档（documentation）
-- style： 格式（不影响代码运行的变动）
-- refactor：重构（即不是新增功能，也不是修改bug的代码变动）
-- test：增加测试
-- chore：构建过程或辅助工具的变动
