@@ -18,9 +18,7 @@ function Banner(props) {
       setId(imgId);
     }, 3000);
     return clearTimeout();
-  // 仅调用一次 TODO: 各种bug
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
   // 圆点点击
   const btnClick = itemId => {
     setId(itemId);

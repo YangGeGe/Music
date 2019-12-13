@@ -7,6 +7,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
 import ActionList from '../../components/MusicHome/ActionList';
+import Footer from '../../components/common/Footer';
 import actions from '../../store/actions';
 import style from './index.less';
 
@@ -35,6 +36,7 @@ function MusicHome(props) {
           })
         }
       </div>
+      <Footer/>
     </div>
   );
 }

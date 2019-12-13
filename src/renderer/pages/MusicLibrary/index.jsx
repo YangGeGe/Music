@@ -20,10 +20,10 @@ function MusicLibrary(props) {
       singer: 'Various Artists',
     },
     {
-      src: 'http://p1.music.126.net/6D1KIsi1ZfCkj1Iq85l1Vw==/109951164509380880.jpg?imageView&quality=89',
+      src: 'http://p1.music.126.net/WLlTKD0C9SUP6GYmGuEb4A==/109951164544988096.jpg?imageView&quality=89',
       id: 3,
-      music: '捞月摇',
-      singer: '不才',
+      music: '桃花缘',
+      singer: '王昕语',
     },
     {
       src: 'http://p1.music.126.net/cwosxc9o3m-QNkkBrYj_mw==/109951164545015991.jpg?imageView&quality=89',
