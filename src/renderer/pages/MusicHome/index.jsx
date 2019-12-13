@@ -35,6 +35,7 @@ function MusicHome(props) {
           })
         }
       </div>
+      <Footer/>
     </div>
   );
 }
