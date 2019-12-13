@@ -12,9 +12,7 @@ function Banner(props) {
     let imgId = id;
     setInterval(() => {
       imgId += 1;
-      // setId(id + 1);
       if (imgId > props.imgList[props.imgList.length - 1].id) {
-        // setId(props.imgList[0].id);
         imgId = props.imgList[0].id;
       }
       setId(imgId);
@@ -65,7 +63,7 @@ function Banner(props) {
               key={ item.id }
               onClick={ () => { btnClick(item.id); } }
               styleName="imgBtn"
-              style={ { background: id === item.id ? 'red' : 'white' } }
+              style={ { background: id === item.id ? 'white' : 'none' } }
             />
           ))
         }

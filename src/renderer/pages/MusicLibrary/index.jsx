@@ -26,10 +26,10 @@ function MusicLibrary(props) {
       singer: '不才',
     },
     {
-      src: 'http://p1.music.126.net/64wqw0V8lYY4KGTsxjaYOA==/109951164509387752.jpg?imageView&quality=89',
+      src: 'http://p1.music.126.net/cwosxc9o3m-QNkkBrYj_mw==/109951164545015991.jpg?imageView&quality=89',
       id: 4,
-      music: '爱你不是两三天',
-      singer: '焦迈奇',
+      music: '少年',
+      singer: '周传雄',
     },
   ];
   console.log(useSelector(state => state.num));
