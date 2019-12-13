@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import CSSModules from 'react-css-modules';
-import styles from './index.less';
 import Action from '../../common/Action';
 import {
   ACTION_MAP,
@@ -46,7 +44,7 @@ function ActionList() {
   };
 
   return (
-    <div styleName="actions">
+    <>
       <ActionGroup
         onClick={ actionOperation }
       >
@@ -61,8 +59,8 @@ function ActionList() {
           ))
         }
       </ActionGroup>
-    </div>
+    </>
   );
 }
 
-export default CSSModules(ActionList, styles);
+export default ActionList;
