@@ -19,10 +19,10 @@ function ActionBall() {
     document.onmousemove = (ev) => {
       const curLeft = ev.pageX - disx;
       const curTop = ev.pageY - disy;
-      if (curLeft > webWidth - 80 || curLeft < 205) {
+      if (curLeft > webWidth - 80 || curLeft < 205) { // 伪类原因宽高不精确
         return;
       }
-      if (curTop > webHeight - 120 || curTop < 0) {
+      if (curTop > webHeight - 140 || curTop < -20) {
         return;
       }
       setPosition({

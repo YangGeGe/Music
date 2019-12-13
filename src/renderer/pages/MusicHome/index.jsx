@@ -7,6 +7,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
 import ActionBall from '../../components/MusicHome/ActionBall';
+import Footer from '../../components/common/Footer';
 import actions from '../../store/actions';
 import style from './index.less';
 
