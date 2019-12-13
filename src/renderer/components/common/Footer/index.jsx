@@ -12,10 +12,10 @@ function Footer() {
     <div styleName="footer">
       <div styleName="musicInfo">
         <img src="http://p2.music.126.net/DK1_4sP_339o5rowMdPXdw==/109951164071024476.jpg?param=34y34"/>
-        <dv styleName="musicName">
+        <div styleName="musicName">
           <p>世间美好与你环环相扣</p>
           <p>柏松</p>
-        </dv>
+        </div>
       </div>
       <div styleName="playInfo">
         <span styleName="lastSong" className="iconfont">&#xe800;</span>
