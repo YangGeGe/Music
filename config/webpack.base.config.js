@@ -19,13 +19,13 @@ module.exports = {
           {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: path.resolve('node_modules/.cache')
-            }
+              cacheDirectory: path.resolve('node_modules/.cache'),
+            },
           },
           {
             loader: 'babel-loader',
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -34,8 +34,8 @@ module.exports = {
             {
               loader: 'cache-loader',
               options: {
-                cacheDirectory: path.resolve('node_modules/.cache')
-              }
+                cacheDirectory: path.resolve('node_modules/.cache'),
+              },
             },
             {
               loader: 'style-loader',
@@ -72,7 +72,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'static/img/[name].[hash:7].[ext]',
+          name: 'assets/imgs/[name].[hash:8].[ext]',
         },
       },
       {
@@ -80,7 +80,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'static/fonts/[name].[hash:7].[ext]',
+          name: 'assets/fonts/[name].[hash:7].[ext]',
         },
       },
     ],

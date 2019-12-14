@@ -27,6 +27,7 @@ module.exports = {
       'react-hooks'
     ],
     rules: {
+      'global-require': [0],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       'func-names': 0,
