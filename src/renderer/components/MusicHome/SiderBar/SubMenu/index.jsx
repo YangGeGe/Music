@@ -1,5 +1,4 @@
-/* eslint-disable react/no-array-index-key */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 import style from './index.less';
@@ -36,4 +35,5 @@ SnbMenu.propTypes = {
   title: PropTypes.string.isRequired,
   menuGroupKey: PropTypes.any.isRequired,
 };
+
 export default CSSModules(SnbMenu, style, { allowMultiple: true });

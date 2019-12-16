@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
-import ActionList from '../../components/MusicHome/ActionList';
+import ActionBall from '../../components/MusicHome/ActionHook';
 import Footer from '../../components/common/Footer';
 import actions from '../../store/actions';
 import style from './index.less';
@@ -18,7 +18,7 @@ function MusicHome(props) {
   } = props;
   return (
     <div styleName="home">
-      <ActionList/>
+      <ActionBall/>
       <SiderBar/>
       <div styleName="homePage">
         {

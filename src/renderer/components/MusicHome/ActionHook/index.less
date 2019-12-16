@@ -1,0 +1,141 @@
+.drag {
+  position: absolute;
+  height: 30px;
+  top: -30px;
+  right: 50px;
+  z-index: 100;
+  user-select: none;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(45deg, #1DA1F2, #c648c8);
+  transition: all 265ms ease-out;
+
+  .animateBottom {
+    animation: swingBottom 1s ease-in-out infinite;
+    transform: rotate(-5deg);
+    transform-origin: top center;
+  }
+
+  .wrap {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    right: 5px;
+  }
+
+  .imgTop {
+    width: 60px;
+    height: 60px;
+    animation: swingTop 1s ease-in-out infinite;
+    transform: rotate(-3deg);
+    transform-origin: top center;
+
+    .imgItem {
+      width: 60px;
+      height: 12px;
+    }
+  }
+
+  .imgCenter {
+    width: 60px;
+    height: 12px;
+    animation: swingCenter 1s ease-in-out infinite;
+    transform: rotate(-5deg);
+    transform-origin: top center;
+
+    .imgItem {
+      width: 60px;
+      height: 12px;
+    }
+  }
+
+  .imgBottom {
+    width: 60px;
+    height: 12px;
+    .animateBottom;
+
+    .imgItem {
+      position: relative;
+      margin-left: 24px;
+      width: 20px;
+      height: 60px;
+
+      img {
+        height: 38px;
+      }
+    }
+
+    .imgItemLeft {
+      position: relative;
+      margin-top: -59px;
+      margin-left: 20px;
+      width: 20px;
+      height: 20px;
+      .animateBottom;
+
+      img {
+        height: 20px;
+      }
+    }
+
+    .imgItemRight {
+      position: relative;
+      margin-top: -20px;
+      margin-left: 35px;
+      width: 20px;
+      height: 20px;
+      .animateBottom;
+
+      img {
+        height: 20px;
+      }
+    }
+  }
+
+}
+
+.setClickStatus {
+  top: 0;
+}
+
+@keyframes swingTop {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes swingCenter {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes swingBottom {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
+}
