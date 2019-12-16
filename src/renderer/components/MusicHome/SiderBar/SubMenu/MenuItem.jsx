@@ -10,7 +10,7 @@ function MenuItem(props) {
   });
   const onClick = () => {
     setCheckend(!isChecked);
-    console.log(itemKey);
+    // console.log(itemKey);
   };
   return (
     <>
