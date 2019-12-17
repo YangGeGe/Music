@@ -1,25 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 import styles from './index.less';
 import ActionList from './ActionList';
 
 
 function ActionHook() {
-  const [click, setClickStatus] = useState(false);
-
-  const actionShow = () => {
-    setClickStatus(true);
-  };
-
-  const actionDisabled = () => {
-    setClickStatus(false);
-  };
-
   return (
     <div
-      styleName={ `stripe ${click ? 'setClickStatus' : ''}` }
-      onDoubleClick={ actionShow }
-      onMouseLeave={ actionDisabled }
+      styleName="stripe"
     >
       <ActionList/>
       <div styleName="wrap">
@@ -50,4 +38,4 @@ function ActionHook() {
 }
 
 
-export default CSSModules(ActionHook, styles, { allowMultiple: true });
+export default CSSModules(ActionHook, styles);
