@@ -13,21 +13,21 @@ function ActionHook() {
       <div styleName="wrap">
         <div styleName="imgTop">
           <div styleName="imgItem">
-            <img src={ `${require('../../../assets/imgs/zhongguojie.png')}` } alt="i1"/>
+            <img src={ `${require('../../../assets/imgs/zhongguojie.png')}` } alt="top"/>
           </div>
           <div styleName="imgCenter">
             <div styleName="imgItem">
-              <img src={ `${require('../../../assets/imgs/zhongguojie (2).png')}` } alt="i2"/>
+              <img src={ `${require('../../../assets/imgs/zhongguojie (2).png')}` } alt="center"/>
             </div>
             <div styleName="imgBottom">
               <div styleName="imgItem">
-                <img src={ `${require('../../../assets/imgs/zhongguojie (3).png')}` } alt="i3"/>
+                <img src={ `${require('../../../assets/imgs/zhongguojie (3).png')}` } alt="bottom"/>
               </div>
               <div styleName="imgItemLeft">
-                <img src={ `${require('../../../assets/imgs/zhongguojie (5).png')}` } alt="i3"/>
+                <img src={ `${require('../../../assets/imgs/zhongguojie (5).png')}` } alt="right"/>
               </div>
               <div styleName="imgItemRight">
-                <img src={ `${require('../../../assets/imgs/zhongguojie (4).png')}` } alt="i3"/>
+                <img src={ `${require('../../../assets/imgs/zhongguojie (4).png')}` } alt="left"/>
               </div>
             </div>
           </div>
