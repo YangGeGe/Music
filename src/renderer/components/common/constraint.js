@@ -23,9 +23,9 @@ export const ACTION_TEXT_KEY = {
 
 export const ACTION_MAP = [
   {
-    text: '关闭',
-    key: 'close',
-    icon: '\ue6e9',
+    text: '最小化',
+    icon: '\ue666',
+    key: 'minSmall',
   },
   {
     key: 'transform',
@@ -39,8 +39,8 @@ export const ACTION_MAP = [
     },
   },
   {
-    text: '最小化',
-    icon: '\ue666',
-    key: 'minSmall',
+    text: '关闭',
+    key: 'close',
+    icon: '\ue6e9',
   },
 ];

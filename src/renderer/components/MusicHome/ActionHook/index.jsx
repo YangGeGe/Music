@@ -17,7 +17,7 @@ function ActionHook() {
 
   return (
     <div
-      styleName={ `drag ${click ? 'setClickStatus' : ''}` }
+      styleName={ `stripe ${click ? 'setClickStatus' : ''}` }
       onDoubleClick={ actionShow }
       onMouseLeave={ actionDisabled }
     >
@@ -45,7 +45,6 @@ function ActionHook() {
           </div>
         </div>
       </div>
-      {/* <div styleName="ornamental" /> */}
     </div>
   );
 }

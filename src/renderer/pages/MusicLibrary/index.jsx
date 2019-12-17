@@ -34,9 +34,9 @@ function MusicLibrary(props) {
   ];
   console.log(useSelector(state => state.num));
   return (
-    <div>
+    <>
       <Banner imgList={ imgList }/>
-    </div>
+    </>
   );
 }
 

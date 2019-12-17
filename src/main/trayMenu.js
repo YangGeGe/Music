@@ -3,9 +3,7 @@
 const trayMenuTemplate = [
   {
     label: '退出',
-    click: () => {
-
-    },
+    role: 'close',
   },
 ];
 
