@@ -7,69 +7,69 @@ function Banner(props) {
   const {
     imgList,
   } = props;
-  const [id, setId] = useState(1); // 图片的id
+  const [btnIndex, setIndex] = useState(1); // button的index
   useEffect(() => {
-    let imgId = id;
+    let imgIndex = btnIndex;
     setInterval(() => {
-      imgId += 1;
-      if (imgId > props.imgList[props.imgList.length - 1].id) {
-        imgId = props.imgList[0].id;
+      imgIndex += 1;
+      if (imgIndex > props.imgList.length) {
+        imgIndex = 1;
       }
-      setId(imgId);
-    }, 3000);
+      setIndex(imgIndex);
+    }, 5000);
     return clearTimeout();
   });
   // 圆点点击
-  const btnClick = itemId => {
-    setId(itemId);
+  const btnClick = index => {
+    setIndex(index);
   };
   // 左点击
-  const leftBtnClick = () => {
-    if (id === props.imgList[0].id) {
-      setId(props.imgList[props.imgList.length - 1].id);
-    } else {
-      setId(id - 1);
-    }
-  };
-  // 右点击
-  const rightBtnClick = () => {
-    if (id === props.imgList[props.imgList.length - 1].id) {
-      setId(props.imgList[0].id);
-    } else {
-      setId(id + 1);
-    }
-  };
+  // const leftBtnClick = () => {
+  //   if (id === props.imgList[0].id) {
+  //     setId(props.imgList[props.imgList.length - 1].id);
+  //   } else {
+  //     setId(id - 1);
+  //   }
+  // };
+  // // 右点击
+  // const rightBtnClick = () => {
+  //   if (id === props.imgList[props.imgList.length - 1].id) {
+  //     setId(props.imgList[0].id);
+  //   } else {
+  //     setId(id + 1);
+  //   }
+  // };
   return (
     <div styleName="banner">
       <div styleName="imgList">
         {
-          imgList.map(item => (
+          imgList.map((item, index) => (
             <img
-              key={ item.id }
+              key={ item.src }
               src={ item.src }
               alt=""
               styleName="img"
-              style={ { zIndex: id === item.id ? 1 : 0 } }
+              style={ { zIndex: index + 1 === btnIndex ? 1 : 0 } }
             />
           ))
         }
       </div>
       <div styleName="imgBtnList">
         {
-          imgList.map(item => (
+          imgList.map((item, index) => (
             <div
-              key={ item.id }
-              onClick={ () => { btnClick(item.id); } }
+              key={ index }
+              onClick={ () => { btnClick(index + 1); } }
               styleName="imgBtn"
-              style={ { background: id === item.id ? 'white' : 'none' } }
+              style={ { background: index + 1 === btnIndex ? 'white' : 'none' } }
             />
           ))
         }
       </div>
-      <div styleName="LRbutton">
+      {/* <div styleName="LRbutton">
         <span className="iconfont" styleName="leftBtn" onClick={ leftBtnClick }>{'\ue720'}</span>
         <span className="iconfont" styleName="rightBtn" onClick={ rightBtnClick }>{'\ue6f8'}</span>
-      </div>
+      </div> */}
     </div>
   );
 }
