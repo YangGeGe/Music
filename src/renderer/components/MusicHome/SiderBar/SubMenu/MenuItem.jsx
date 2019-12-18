@@ -13,19 +13,17 @@ function MenuItem(props) {
     // console.log(itemKey);
   };
   return (
-    <>
-      <div
-        key={ itemKey }
-        styleName="menuItem"
-        onClick={ onClick }
-        style={ {
-          color: isChecked ? 'white' : '',
-          borderRight: isChecked ? '3px solid white' : '',
-        } }
-      >
-        <span className="iconfont">{item.icon}</span> {item.name}
-      </div>
-    </>
+    <div
+      key={ itemKey }
+      styleName="menuItem"
+      onClick={ onClick }
+      style={ {
+        color: isChecked ? 'white' : '',
+        borderRight: isChecked ? '3px solid white' : '',
+      } }
+    >
+      <span className="iconfont">{item.icon}</span> {item.name}
+    </div>
   );
 }
 MenuItem.propTypes = {

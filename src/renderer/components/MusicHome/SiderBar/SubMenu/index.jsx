@@ -12,22 +12,20 @@ function SnbMenu(props) {
     });
   });
   return (
-    <>
-      <div styleName="menuList" >
-        {
-          title && <div styleName="listTitle">{title}</div>
-        }
-        {
-          menuList.map((item, index) => (
-            <MenuItem
-              key={ `${menuGroupKey}-${index}` }
-              item={ item }
-              itemKey={ `${menuGroupKey}-${index}` }
-            />
-          ))
-        }
-      </div>
-    </>
+    <div styleName="menuList" >
+      {
+        title && <div styleName="listTitle">{title}</div>
+      }
+      {
+        menuList.map((item, index) => (
+          <MenuItem
+            key={ `${menuGroupKey}-${index}` }
+            item={ item }
+            itemKey={ `${menuGroupKey}-${index}` }
+          />
+        ))
+      }
+    </div>
   );
 }
 SnbMenu.propTypes = {
