@@ -1,13 +1,17 @@
 .stripe {
   position: absolute;
-  height: 30px;
   top: -30px;
   left: 120px;
   z-index: 100;
   user-select: none;
   border-radius: 0 0 5px 5px;
-  background: rgba(11, 18, 37);
+  background: transparent;
   transition: all 265ms ease-out;
+  cursor: pointer;
+
+  &:hover {
+    top: 0;
+  }
 
   .animateBottom {
     animation: swingBottom 1s ease-in-out infinite;
@@ -92,10 +96,6 @@
     }
   }
 
-}
-
-.setClickStatus {
-  top: 0;
 }
 
 @keyframes swingTop {

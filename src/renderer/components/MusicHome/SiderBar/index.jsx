@@ -3,11 +3,13 @@ import CSSModules from 'react-css-modules';
 import style from './index.less';
 import SiderBarMenu from './SubMenu';
 import User from './User';
+import Dragabled from './Dragabled';
 import { Modular } from '../../constraint';
 
 function SiderBar() {
   return (
     <div styleName="siderBar">
+      <Dragabled/>
       <User/>
       <div>
         {

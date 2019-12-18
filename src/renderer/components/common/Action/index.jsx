@@ -11,7 +11,7 @@ function ActionGroup(props) {
   } = props;
 
   return (
-    <>
+    <div styleName="actionGroup">
       {
         children.map(action => (
           <span
@@ -23,7 +23,7 @@ function ActionGroup(props) {
           </span>
         ))
       }
-    </>
+    </div>
   );
 }
 
