@@ -1,20 +1,17 @@
-import { ADD } from '../actions/actionTypes';
+import {
+  SETTER,
+} from '../actions/actionTypes';
 
 const initState = {
-  num: 1,
+  user: {},
 };
 
 function reducer(state = initState, action) {
-  let newState;
   switch (action.type) {
-    case ADD:
-      state.num += 1;
-      newState = { ...state };
-      break;
+    case SETTER:
+      return { ...state, ...action.payload };
     default:
-      newState = state;
-      break;
+      return { ...state };
   }
-  return newState;
 }
 export default reducer;

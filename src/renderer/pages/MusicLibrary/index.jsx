@@ -32,7 +32,7 @@ function MusicLibrary(props) {
       singer: '周传雄',
     },
   ];
-  console.log(useSelector(state => state.num));
+  console.log(useSelector(state => state.user));
   return (
     <>
       <Banner imgList={ imgList }/>

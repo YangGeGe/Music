@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
 import ActionHook from '../../components/MusicHome/ActionHook';
 import Footer from '../../components/common/Footer';
-import actions from '../../store/actions';
+import userActions from '../../store/actions/user';
 import style from './index.less';
 
 
@@ -16,6 +16,7 @@ function MusicHome(props) {
   const {
     routes,
   } = props;
+
   return (
     <div styleName="home">
       <SiderBar/>
@@ -47,4 +48,4 @@ MusicHome.propTypes = {
 
 export default connect((state) => ({
   ...state,
-}), actions)(CSSModules(MusicHome, style));
+}), userActions)(CSSModules(MusicHome, style));
