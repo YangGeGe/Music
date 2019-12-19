@@ -14,6 +14,7 @@ function MenuItem(props) {
       style={ {
         color: composeKey === (menuGroupKey + i) ? 'white' : '',
         borderRight: composeKey === (menuGroupKey + i) ? '3px solid white' : '',
+        transition: '.5s ease',
       } }
     >
       <span className="iconfont">{item.icon}</span> {item.name}

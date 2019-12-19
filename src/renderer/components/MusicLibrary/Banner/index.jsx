@@ -62,7 +62,7 @@ function Banner(props) {
         {
           imgList.map((item, index) => (
             <div
-              key={ index }
+              key={ item }
               // onClick={ () => { btnClick(index + 1); } }
               onMouseOver={ () => { btnClick(index + 1); } }
               onFocus={ () => { btnClick(index + 1); } }
