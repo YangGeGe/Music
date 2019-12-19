@@ -1,12 +1,12 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 
 function Banner(props) {
-  const {
-    imgList,
-  } = props;
+  const { imgList } = props;
   const [btnIndex, setIndex] = useState(1); // button的index
   useEffect(() => {
     test1;
@@ -62,7 +62,7 @@ function Banner(props) {
         {
           imgList.map((item, index) => (
             <div
-              key={ item }
+              key={ index }
               // onClick={ () => { btnClick(index + 1); } }
               onMouseOver={ () => { btnClick(index + 1); } }
               onFocus={ () => { btnClick(index + 1); } }
