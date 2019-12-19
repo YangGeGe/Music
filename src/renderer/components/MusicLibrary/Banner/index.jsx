@@ -9,19 +9,23 @@ function Banner(props) {
   } = props;
   const [btnIndex, setIndex] = useState(1); // button的index
   useEffect(() => {
-    let imgIndex = btnIndex;
-    setInterval(() => {
-      imgIndex += 1;
-      if (imgIndex > props.imgList.length) {
-        imgIndex = 1;
-      }
-      setIndex(imgIndex);
-    }, 5000);
-    return clearTimeout();
+    test1;
+    // return clearTimeout(test1);
   });
+
+  const test1 = setTimeout(() => {
+    let imgIndex = btnIndex;
+    imgIndex += 1;
+    if (imgIndex > props.imgList.length) {
+      imgIndex = 1;
+    }
+    setIndex(imgIndex);
+  }, 2000);
+
   // 圆点点击
   const btnClick = index => {
     setIndex(index);
+    clearTimeout(test1);
   };
   // 左点击
   // const leftBtnClick = () => {
@@ -59,7 +63,9 @@ function Banner(props) {
           imgList.map((item, index) => (
             <div
               key={ index }
-              onClick={ () => { btnClick(index + 1); } }
+              // onClick={ () => { btnClick(index + 1); } }
+              onMouseOver={ () => { btnClick(index + 1); } }
+              onFocus={ () => { btnClick(index + 1); } }
               styleName="imgBtn"
               style={ { background: index + 1 === btnIndex ? 'white' : 'none' } }
             />
