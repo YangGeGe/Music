@@ -1,37 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CSSModules from 'react-css-modules';
-import PropTypes from 'prop-types';
 import style from './index.less';
+import { Modular } from '../../../constraint';
 import MenuItem from './MenuItem';
 
-function SnbMenu(props) {
-  const { menuGroupKey, menuList, title } = props;
+function SnbMenu() {
+  const [composeKey, setkeys] = useState('');
   useEffect(() => {
-    menuList.map(item => {
-      item.isChoise = false;
-    });
   });
+
+  const onClick = (groupKey, index) => {
+    setkeys(`${groupKey + index}`);
+  };
+
   return (
-    <div styleName="menuList" >
+    <>
       {
-        title && <div styleName="listTitle">{title}</div>
-      }
-      {
-        menuList.map((item, index) => (
-          <MenuItem
-            key={ `${menuGroupKey}-${index}` }
-            item={ item }
-            itemKey={ `${menuGroupKey}-${index}` }
-          />
+        Modular.map(item => (
+          <div
+            key={ item.key }
+            styleName="menuList"
+          >
+            { item.title && <div styleName="listTitle">{item.title}</div> }
+            {
+              item.modular.map((ele, index) => (
+                <MenuItem
+                  key={ ele.name }
+                  composeKey={ composeKey }
+                  item={ ele }
+                  menuGroupKey={ item.key }
+                  i={ index }
+                  onClick={ () => { onClick(item.key, index); } }
+                />
+              ))
+            }
+          </div>
         ))
       }
-    </div>
+    </>
   );
 }
-SnbMenu.propTypes = {
-  menuList: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
-  menuGroupKey: PropTypes.any.isRequired,
-};
 
 export default CSSModules(SnbMenu, style, { allowMultiple: true });
