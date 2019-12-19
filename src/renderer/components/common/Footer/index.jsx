@@ -1,17 +1,13 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 
 function Footer() {
-  useEffect(() => {
-
-  });
   // 底部长度不能1000%
   return (
     <div styleName="footer">
       <div styleName="musicInfo">
-        <img src="http://p2.music.126.net/DK1_4sP_339o5rowMdPXdw==/109951164071024476.jpg?param=34y34"/>
+        <img src="http://p2.music.126.net/DK1_4sP_339o5rowMdPXdw==/109951164071024476.jpg?param=34y34" alt=""/>
         <div styleName="musicName">
           <p>世间美好与你环环相扣</p>
           <p>柏松</p>

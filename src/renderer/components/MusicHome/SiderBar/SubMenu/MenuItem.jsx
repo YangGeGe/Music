@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import style from './MenuItem.less';
 
 function MenuItem(props) {
   const { menuGroupKey, item, composeKey, i, onClick } = props;
-  useEffect(() => {
-  });
+
   return (
     <div
       styleName="menuItem"

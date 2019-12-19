@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 import { Modular } from '../../../constraint';
@@ -6,8 +6,7 @@ import MenuItem from './MenuItem';
 
 function SnbMenu() {
   const [composeKey, setkeys] = useState('');
-  useEffect(() => {
-  });
+
 
   const onClick = (groupKey, index) => {
     setkeys(`${groupKey + index}`);
