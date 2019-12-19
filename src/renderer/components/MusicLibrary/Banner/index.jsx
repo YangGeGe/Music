@@ -20,7 +20,7 @@ function Banner(props) {
       imgIndex = 1;
     }
     setIndex(imgIndex);
-  }, 2000);
+  }, 5000);
 
   // 圆点点击
   const btnClick = index => {
