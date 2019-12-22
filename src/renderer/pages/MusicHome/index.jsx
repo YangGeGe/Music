@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Route,
 } from 'react-router-dom';
@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
 import ActionHook from '../../components/MusicHome/ActionHook';
 import Footer from '../../components/common/Footer';
+// import Button from '../../components/common/Button';
+// import Modal from '../../components/common/Modal';
 import userActions from '../../store/actions/user';
 import style from './index.less';
 
@@ -16,7 +18,11 @@ function MusicHome(props) {
   const {
     routes,
   } = props;
+  // const [visible, setVisible] = useState(false);
 
+  // const onOk = () => {
+  //   setVisible(false);
+  // };
   return (
     <div styleName="home">
       <SiderBar/>
@@ -37,6 +43,15 @@ function MusicHome(props) {
           })
         }
       </div>
+      {/* <div onClick={ () => { setVisible(true); } }>显示Modal框</div>
+      <Modal
+        visible={ visible }
+        okText="确认"
+        cancleText="取消"
+        onOk={ onOk }
+      >
+        <div>2332</div>
+      </Modal> */}
       <Footer/>
     </div>
   );
