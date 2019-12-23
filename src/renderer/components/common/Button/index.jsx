@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import style from './index.less';
 
 function Button(props) {
-  const { type, children } = props;
+  const { type, children, onClick } = props;
   return (
     <button
-      styleName={type || 'button'}
+      styleName={ type || 'button' }
+      type="button"
+      onClick={ onClick }
     >
-      <span>{children}</span>
+      <span>{ children }</span>
     </button>
   );
 }
@@ -17,6 +19,12 @@ function Button(props) {
 Button.propTypes = {
   type: PropTypes.string,
   children: PropTypes.string,
+  onClick: PropTypes.func,
+};
+Button.defaultProps = {
+  type: '',
+  children: '',
+  onClick: PropTypes.func,
 };
 
 export default CSSModules(Button, style);

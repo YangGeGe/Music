@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
+import Button from '../../common/Button';
 
 function Banner(props) {
   const { imgList } = props;
@@ -26,6 +27,9 @@ function Banner(props) {
   const btnClick = index => {
     setIndex(index);
     clearTimeout(test1);
+  };
+  const onclick = () => {
+    console.log(1);
   };
   // 左点击
   // const leftBtnClick = () => {
@@ -76,6 +80,7 @@ function Banner(props) {
         <span className="iconfont" styleName="leftBtn" onClick={ leftBtnClick }>{'\ue720'}</span>
         <span className="iconfont" styleName="rightBtn" onClick={ rightBtnClick }>{'\ue6f8'}</span>
       </div> */}
+      <Button onClick={ onclick }>点我</Button>
     </div>
   );
 }
