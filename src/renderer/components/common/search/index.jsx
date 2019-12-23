@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 import History from './History';
 
 function Search(props) {
-  useEffect(() => {
-
-  });
-
   return (
     <div styleName="search">
       <input

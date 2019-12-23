@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
@@ -64,7 +62,7 @@ function Banner(props) {
       </div>
       <div styleName="imgBtnList">
         {
-          imgList.map((item, index) => (
+          imgList.map((_, index) => (
             <div
               key={ index }
               // onClick={ () => { btnClick(index + 1); } }

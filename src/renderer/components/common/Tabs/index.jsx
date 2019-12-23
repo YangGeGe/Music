@@ -5,10 +5,6 @@ import style from './index.less';
 function Tabs(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  //   useEffect(() => {
-  //     change();
-  //   }, [val])
-
   const checkTitle = (index) => (index === currentIndex ? 'tabTitleActive' : 'tabTitle');
 
   const checkItem = (index) => (index === currentIndex ? 'tabItemShow' : 'tabItem');
@@ -21,10 +17,10 @@ function Tabs(props) {
             <div
               onClick={ () => { setCurrentIndex(index); } }
               styleName="tabTitle"
-              style={ { 
+              style={ {
                 borderBottom: checkTitle(index) === 'tabTitleActive' ? '2px solid blue' : null,
                 paddingBottom: checkTitle(index) === 'tabTitleActive' ? '5px' : null,
-                color: checkTitle(index) === 'tabTitleActive' ? 'blue' : null, 
+                color: checkTitle(index) === 'tabTitleActive' ? 'blue' : null,
               } }
             >{ element.props.name }
             </div>
