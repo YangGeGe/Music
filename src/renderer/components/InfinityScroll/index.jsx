@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function InfitityScroll(props) {
-  const {
-    itemHeight,
-    itemMarginTop,
-    viewHeight, // 视口高度
-    viewWidth, // 视口宽度
-    sourceList,
-    rightOffBottom,
-  } = props;
+function InfitityScroll({
+  itemHeight,
+  itemMarginTop,
+  viewHeight, // 视口高度
+  viewWidth, // 视口宽度
+  sourceList,
+  rightOffBottom,
+}) {
   const viewItemCount = parseInt(viewHeight / (itemHeight + itemMarginTop), 0) + 1; // 视口内盛放的item个数
   const [currentList, setCurrentList] = useState(sourceList.slice(0, viewItemCount));
   const [scrollTop, setScrollTop] = useState(0); // 长列表的scrollTop

@@ -14,10 +14,9 @@ import userActions from '../../store/actions/user';
 import style from './index.less';
 
 
-function MusicHome(props) {
-  const {
-    routes,
-  } = props;
+function MusicHome({
+  routes,
+}) {
   // const [visible, setVisible] = useState(false);
 
   // const onOk = () => {

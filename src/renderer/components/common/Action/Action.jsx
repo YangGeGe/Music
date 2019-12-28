@@ -3,11 +3,10 @@ import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 import styles from './Action.less';
 
-function Action(props) {
-  const {
-    title,
-    children,
-  } = props;
+function Action({
+  title,
+  children,
+}) {
   return (
     <i
       title={ title }

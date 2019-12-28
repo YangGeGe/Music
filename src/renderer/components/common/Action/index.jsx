@@ -4,12 +4,10 @@ import PropTypes from 'prop-types';
 import styles from './index.less';
 import ActionItem from './Action';
 
-function ActionGroup(props) {
-  const {
-    children,
-    onClick,
-  } = props;
-
+function ActionGroup({
+  children,
+  onClick,
+}) {
   return (
     <div styleName="actionGroup">
       {

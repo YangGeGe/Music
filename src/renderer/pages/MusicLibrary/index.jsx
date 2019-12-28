@@ -4,8 +4,7 @@ import { useSelector } from 'react-redux';
 import style from './index.less';
 import Banner from '../../components/MusicLibrary/Banner';
 
-function MusicLibrary(props) {
-  console.log(props);
+function MusicLibrary() {
   const imgList = [
     {
       src: 'http://p1.music.126.net/lWe5sGr3IJecg-l9d6IZVA==/109951164496424429.jpg?imageView&quality=89',
