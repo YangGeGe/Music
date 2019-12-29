@@ -6,8 +6,7 @@ import CSSModules from 'react-css-modules';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
-import ActionHook from '../../components/MusicHome/ActionHook';
-import Footer from '../../components/common/Footer';
+import Control from '../../components/common/Control';
 // import Button from '../../components/common/Button';
 // import Modal from '../../components/common/Modal';
 import userActions from '../../store/actions/user';
@@ -25,7 +24,6 @@ function MusicHome({
   return (
     <div styleName="home">
       <SiderBar/>
-      <ActionHook/>
       <div styleName="homePage">
         {
           routes.map(({ path, componentName, key }) => {
@@ -51,7 +49,7 @@ function MusicHome({
       >
         <div>2332</div>
       </Modal> */}
-      <Footer/>
+      <Control/>
     </div>
   );
 }
