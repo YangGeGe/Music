@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules';
 import { useSelector } from 'react-redux';
 import style from './index.less';
 import Banner from '../../components/MusicLibrary/Banner';
+import Recommend from '../../components/MusicLibrary/Recommend';
 
 function MusicLibrary() {
   const imgList = [
@@ -35,6 +36,7 @@ function MusicLibrary() {
   return (
     <>
       <Banner imgList={ imgList }/>
+      <Recommend/>
     </>
   );
 }
