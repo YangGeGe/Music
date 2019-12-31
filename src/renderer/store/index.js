@@ -3,6 +3,7 @@ import {
   applyMiddleware,
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import logger from 'redux-logger';
 import reducer from './reducers';
 import userSaga from './sagas/user';
 
@@ -13,6 +14,6 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
 );
 
-sagaMiddleware.run(userSaga);
+sagaMiddleware.run(userSaga, logger);
 
 export default store;
