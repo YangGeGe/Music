@@ -9,7 +9,7 @@ function Button(props) {
     <button
       styleName={ type }
       type="button"
-      // onClick={ onClick }
+      onClick={ onClick }
     >
       <span>{ children }</span>
     </button>
