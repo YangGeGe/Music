@@ -32,8 +32,8 @@ function Banner(props) {
         {
           imgList.map((item, index) => (
             <img
-              key={ item.src }
-              src={ item.src }
+              key={ item.imageUrl }
+              src={ item.imageUrl }
               alt=""
               styleName="img"
               style={ { zIndex: index + 1 === btnIndex ? 1 : 0 } }

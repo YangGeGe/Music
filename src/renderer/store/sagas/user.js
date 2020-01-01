@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import {
-  SETTER,
+  USER_SETTER,
   LOGIN,
 } from '../actions/actionTypes';
 import {
@@ -10,7 +10,7 @@ import {
 function* login(action) {
   try {
     const user = yield call(loginRequest, action.payload);
-    yield put({ type: SETTER, payload: user });
+    yield put({ type: USER_SETTER, payload: user });
   } catch (e) {
     console.log(e);
   }

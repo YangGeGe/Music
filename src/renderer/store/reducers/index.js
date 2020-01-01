@@ -1,17 +1,10 @@
-import {
-  SETTER,
-} from '../actions/actionTypes';
+import { combineReducers } from 'redux';
+import userReducer from './user';
+import musicLibraryReducer from './musicLibrary';
 
-const initState = {
-  user: {},
-};
+const reducer = combineReducers({
+  user: userReducer,
+  musicLibrary: musicLibraryReducer,
+});
 
-function reducer(state = initState, action) {
-  switch (action.type) {
-    case SETTER:
-      return { ...state, ...action.payload };
-    default:
-      return { ...state };
-  }
-}
 export default reducer;

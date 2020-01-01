@@ -5,15 +5,15 @@ import {
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 import reducer from './reducers';
-import userSaga from './sagas/user';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   reducer,
-  applyMiddleware(sagaMiddleware)
+  applyMiddleware(sagaMiddleware, logger)
 );
 
-sagaMiddleware.run(userSaga, logger);
+sagaMiddleware.run(rootSaga);
 
 export default store;
