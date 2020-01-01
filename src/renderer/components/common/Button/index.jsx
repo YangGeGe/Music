@@ -7,7 +7,7 @@ function Button(props) {
   const { type, children, onClick } = props;
   return (
     <button
-      styleName={ type || 'button' }
+      styleName={ type }
       type="button"
       onClick={ onClick }
     >
@@ -22,7 +22,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
 };
 Button.defaultProps = {
-  type: '',
+  type: 'button',
   children: '',
   onClick: PropTypes.func,
 };

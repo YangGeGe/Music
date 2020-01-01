@@ -8,7 +8,9 @@ function Banner(props) {
   const [btnIndex, setIndex] = useState(1); // button的index
   useEffect(() => {
     test1;
-    // return clearTimeout(test1);
+    return function () {
+      clearTimeout(test1);
+    };
   });
 
   const test1 = setTimeout(() => {
@@ -46,7 +48,6 @@ function Banner(props) {
           imgList.map((_, index) => (
             <div
               key={ index }
-              // onClick={ () => { btnClick(index + 1); } }
               onMouseOver={ () => { btnClick(index + 1); } }
               onFocus={ () => { btnClick(index + 1); } }
               styleName="imgBtn"
