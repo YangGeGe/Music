@@ -1,26 +1,66 @@
-.banner {
-  position: relative;
+@px: 16rem;
+
+.banner{
   overflow: hidden;
-
-  .imgList {
-    height: 0;
-    padding-top: 40%;
+  display: flex;
+  justify-content: center;
+  .imgList{
+    height: 210px;
+    width: 540px;
     position: relative;
-
-    .img {
+    .normal{
       position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+      height: 200px;
+      width: 500px;
+      transition: all .3s ease-in-out 0s;
+      left: 0;
+      bottom: 0;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        transition: all .3s ease-in-out 0s;
+      }
+    }
+    .current {
+      z-index: 10;
+      height: 210px;
+      width: 540px;
+      left: 0;
+      bottom: 0;
+
+      .mask {
+        background: transparent;
+      }
     }
 
-    .zIndex {
-      z-index: 1;
+    .previous {
+      z-index: 9;
+      left: -150/@px;
+      bottom: 0;
+      width: 500px;
+      height: 200px;
+    }
+
+    .next {
+      z-index: 8;
+      left: 170/@px;
+      bottom: 0;
+      width: 500px;
+      height: 200px;
     }
   }
-
-  .imgBtnList {
+  .imgBtnList{
     z-index: 10;
     height: 100%;
     display: flex;
@@ -29,47 +69,14 @@
     position: absolute;
     right: 1rem;
     top: 0;
-
-    .imgBtn {
+    .imgBtn{
       border: 1px solid white;
       border-radius: 50%;
-      height: 8px;
-      width: 8px;
+      height: 5/@px;
+      width: 5/@px;
       float: left;
       margin: 5px 0;
       cursor: pointer;
     }
-  }
-
-  .LRbutton {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 10;
-
-    .leftBtn,
-    .rightBtn {
-      display: inline-block;
-      height: 2rem;
-      width: 2rem;
-      border-radius: 1rem;
-      background: rgba(255, 255, 255, .5);
-      z-index: 10;
-      cursor: pointer;
-      text-align: center;
-      line-height: 2rem;
-      opacity: 0;
-      transition: all .6s;
-      margin-left: .8rem;
-    }
-  }
-}
-
-.banner:hover {
-
-  .leftBtn,
-  .rightBtn {
-    opacity: 1;
-    transition: all .6;
   }
 }
