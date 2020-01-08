@@ -9,6 +9,7 @@ import musicLibraryActions from '../../store/actions/musicLibrary';
 import style from './index.less';
 import Banner from '../../components/MusicLibrary/Banner';
 import Recommend from '../../components/MusicLibrary/Recommend';
+import Page from '../../components/common/Page';
 
 function MusicLibrary({
   getBannerList,
@@ -23,11 +24,12 @@ function MusicLibrary({
   }, [getBannerList]);
   console.log(useSelector(state => state));
 
-
   return (
     <>
       <Banner imgList={ bannerList }/>
-      <Recommend/>
+      <Page style={ { padding: '10px 0 0 20px' } }>
+        <Recommend/>
+      </Page>
     </>
   );
 }

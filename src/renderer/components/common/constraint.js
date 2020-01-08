@@ -1,4 +1,3 @@
-
 export const MESSAGE_ICON_TEXT_MAP = {
   success: 'success',
   error: 'error',
@@ -44,3 +43,8 @@ export const ACTION_MAP = [
     icon: '\ue6e9',
   },
 ];
+
+export const TITLE_ICON = {
+  left: '\ue720',
+  right: '\ue6f8',
+};

@@ -60,6 +60,7 @@ module.exports = {
                 context: path.resolve(__dirname, 'src'),
                 hashPrefix: 'my-custom-hash',
               },
+              sourceMap: true,
             },
           },
           {
