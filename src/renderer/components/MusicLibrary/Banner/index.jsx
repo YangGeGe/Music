@@ -81,9 +81,8 @@ function Banner({
   };
 
   const continueInterval = () => {
-    setTimeout(() => {
-      interval();
-    }, 1000);
+    stopInterval();
+    interval();
   };
 
   useEffect(() => {
