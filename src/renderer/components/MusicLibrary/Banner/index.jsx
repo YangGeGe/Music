@@ -1,53 +1,126 @@
-import React, { useState, useEffect } from 'react';
+import React,
+{
+  useEffect,
+  useRef,
+  useCallback,
+  useReducer,
+} from 'react';
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 
-function Banner(props) {
-  const { imgList } = props;
-  const [btnIndex, setIndex] = useState(1); // button的index
-  useEffect(() => {
-    test1;
-    return function () {
-      clearTimeout(test1);
-    };
-  });
+const initState = {
+  currentIndex: 0,
+};
 
-  const test1 = setTimeout(() => {
-    let imgIndex = btnIndex;
+function reducer(state, action) {
+  const { currentIndex } = state;
+  let imgIndex = currentIndex;
+  if (action.type === 'toRight') {
     imgIndex += 1;
-    if (imgIndex > props.imgList.length) {
-      imgIndex = 1;
+    if (imgIndex > action.payload.length - 1) {
+      imgIndex = 0;
     }
-    setIndex(imgIndex);
-  }, 5000);
+    return { currentIndex: imgIndex };
+  } if (action.type === 'toLeft') {
+    imgIndex -= 1;
+    if (imgIndex < 0) {
+      imgIndex = action.payload.length - 1;
+    }
+    return { currentIndex: imgIndex };
+  }
+  throw new Error();
+}
 
-  // 圆点点击
-  const btnClick = index => {
-    setIndex(index);
-    clearTimeout(test1);
+function Banner({
+  imgList,
+}) {
+  const timeInterval = useRef(null);
+
+  const [state, dispatch] = useReducer(reducer, initState);
+  const { currentIndex } = state;
+
+  const getStyleName = (itemIndex) => {
+    switch (currentIndex) {
+      case itemIndex:
+        return 'current';
+      case itemIndex - 1:
+        return 'next';
+      case itemIndex + (imgList.length - 1):
+        return 'next';
+      case itemIndex - (imgList.length - 1):
+        return 'previous';
+      case itemIndex + 1:
+        return 'previous';
+      default:
+        return '';
+    }
   };
+
+  const interval = useCallback(() => {
+    timeInterval.current = setInterval(() => {
+      dispatch({ type: 'toRight', payload: imgList });
+    }, 5000);
+  }, [imgList]);
+
+  const clickEle = (index) => {
+    switch (getStyleName(index)) {
+      case 'previous':
+        dispatch({ type: 'toLeft', payload: imgList });
+        break;
+      case 'next':
+        dispatch({ type: 'toRight', payload: imgList });
+        break;
+      default:
+            // 对当前banner数据处理
+    }
+  };
+
+  const stopInterval = () => {
+    clearInterval(timeInterval.current);
+  };
+
+  const continueInterval = () => {
+    stopInterval();
+    interval();
+  };
+
+  useEffect(() => {
+    interval();
+    return () => {
+      clearInterval(timeInterval.current);
+    };
+  }, [interval]);
 
   return (
     <div styleName="banner">
-      <div styleName="imgList">
+      <div
+        styleName="imgList"
+        onMouseEnter={ () => stopInterval() }
+        onMouseLeave={ () => continueInterval() }
+      >
         {
           imgList.map((item, index) => (
-            <img
+            <div
               key={ item.imageUrl }
-              src={ item.imageUrl }
-              alt=""
-              styleName="img"
-              style={ { zIndex: index + 1 === btnIndex ? 1 : 0 } }
-            />
+              styleName={ `normal ${getStyleName(index)}` }
+              onClick={ () => clickEle(index) }
+            >
+              <img
+                src={ item.imageUrl }
+                alt="banner.png"
+              />
+              <div styleName="mask"/>
+            </div>
           ))
         }
       </div>
-      <div styleName="imgBtnList">
+      {/* <div styleName="imgBtnList">
         {
           imgList.map((_, index) => (
             <div
               key={ index }
+              // onClick={ () => { btnClick(index + 1); } }
               onMouseOver={ () => { btnClick(index + 1); } }
               onFocus={ () => { btnClick(index + 1); } }
               styleName="imgBtn"
@@ -55,7 +128,7 @@ function Banner(props) {
             />
           ))
         }
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -64,4 +137,4 @@ Banner.propTypes = {
   imgList: PropTypes.array.isRequired,
 };
 
-export default CSSModules(Banner, style);
+export default CSSModules(Banner, style, { allowMultiple: true });
