@@ -103,12 +103,12 @@ function Banner({
         {
           imgList.map((item, index) => (
             <div
-              key={ item.src }
+              key={ item.imageUrl }
               styleName={ `normal ${getStyleName(index)}` }
               onClick={ () => clickEle(index) }
             >
               <img
-                src={ item.src }
+                src={ item.imageUrl }
                 alt="banner.png"
               />
               <div styleName="mask"/>
