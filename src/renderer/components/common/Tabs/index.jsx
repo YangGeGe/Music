@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import CSSModules from 'react-css-modules';
+import PropTypes from 'prop-types';
 import style from './index.less';
 
-function Tabs(props) {
+function Tabs({
+  children,
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const checkTitle = (index) => (index === currentIndex ? 'tabTitleActive' : 'tabTitle');
@@ -13,7 +16,7 @@ function Tabs(props) {
     <div>
       <div styleName="tabTitleWrap">
         {
-          React.Children.map(props.children, (element, index) => (
+          React.Children.map(children, (element, index) => (
             <div
               onClick={ () => { setCurrentIndex(index); } }
               styleName="tabTitle"
@@ -29,7 +32,7 @@ function Tabs(props) {
       </div>
       <div styleName="tabItemWrap">
         {
-          React.Children.map(props.children, (element, index) => (
+          React.Children.map(children, (element, index) => (
             <div styleName="tabItem" style={ { display: checkItem(index) === 'tabItemShow' ? 'block' : 'none' } }>{ element }</div>
           ))
         }
@@ -37,5 +40,9 @@ function Tabs(props) {
     </div>
   );
 }
+
+Tabs.propTypes = {
+  children: PropTypes.array.isRequired,
+};
 
 export default CSSModules(Tabs, style);

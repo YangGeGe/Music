@@ -1,14 +1,19 @@
-
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import Button from '../Button';
 import style from './index.less';
 
-function Modal(props) {
+function Modal({
+  visible,
+  children,
+  cancleText,
+  okText,
+}) {
 //   const [visible, setVisible] = useState(true);
   return (
     <div>
-      {props.visible === true
+      {visible
         ? (
           <div id="modal" className={ style.modal }>
             <div className={ style.modalContent }>
@@ -18,11 +23,11 @@ function Modal(props) {
               </header>
               <div className={ style.modalBody }>
                 {/* <p>这是内容！</p> */}
-                {React.Children.map(props.children, (item) => (<div>{item}</div>))}
+                {React.Children.map(children, (item) => (<div>{item}</div>))}
               </div>
               <footer className={ style.modalFooter }>
-                <Button id={ style.cancel }>{ props.cancleText }</Button>
-                <div id={ style.sure }>{ props.okText }</div>
+                <Button id={ style.cancel }>{ cancleText }</Button>
+                <div id={ style.sure }>{ okText }</div>
               </footer>
             </div>
           </div>
@@ -31,5 +36,17 @@ function Modal(props) {
 
   );
 }
+
+Modal.propTypes = {
+  okText: PropTypes.string,
+  cancleText: PropTypes.string,
+  visible: PropTypes.bool.isRequired,
+  children: PropTypes.array.isRequired,
+};
+
+Modal.defaultProps = {
+  okText: '确认',
+  cancleText: '取消',
+};
 
 export default CSSModules(Modal, style);
