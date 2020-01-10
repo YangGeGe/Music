@@ -25,12 +25,10 @@ function MusicLibrary({
   console.log(useSelector(state => state));
 
   return (
-    <>
+    <Page>
       <Banner imgList={ bannerList }/>
-      <Page style={ { padding: '10px 0 0 20px' } }>
-        <Recommend/>
-      </Page>
-    </>
+      <Recommend/>
+    </Page>
   );
 }
 

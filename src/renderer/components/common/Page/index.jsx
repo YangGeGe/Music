@@ -6,8 +6,8 @@ function Page({
   style,
 }) {
   return (
-    <div style={ style || {
-      padding: '10px 20px',
+    <div style={ Object.keys(style).length > 0 || {
+      padding: '0 20px',
     } }
     >
       {children}

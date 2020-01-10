@@ -28,6 +28,8 @@ function reducer(state, action) {
       imgIndex = action.payload.length - 1;
     }
     return { currentIndex: imgIndex };
+  } if (action.type === 'hover') {
+    return { currentIndex: action.payload };
   }
   throw new Error();
 }
@@ -85,6 +87,10 @@ function Banner({
     interval();
   };
 
+  const hover = (index) => {
+    dispatch({ type: 'hover', payload: index });
+  };
+
   useEffect(() => {
     interval();
     return () => {
@@ -92,12 +98,16 @@ function Banner({
     };
   }, [interval]);
 
+  const hoverActiiion = {
+    onMouseEnter: () => stopInterval(),
+    onMouseLeave: () => continueInterval(),
+  };
+
   return (
     <div styleName="banner">
       <div
         styleName="imgList"
-        onMouseEnter={ () => stopInterval() }
-        onMouseLeave={ () => continueInterval() }
+        { ... hoverActiiion }
       >
         {
           imgList.map((item, index) => (
@@ -115,20 +125,21 @@ function Banner({
           ))
         }
       </div>
-      {/* <div styleName="imgBtnList">
+      <div
+        styleName="btnList"
+        { ... hoverActiiion }
+      >
         {
-          imgList.map((_, index) => (
+          imgList.map((item, index) => (
             <div
-              key={ index }
-              // onClick={ () => { btnClick(index + 1); } }
-              onMouseOver={ () => { btnClick(index + 1); } }
-              onFocus={ () => { btnClick(index + 1); } }
-              styleName="imgBtn"
-              style={ { background: index + 1 === btnIndex ? 'white' : 'none' } }
+              key={ item.imageUrl }
+              onMouseOver={ () => { hover(index); } }
+              onFocus={ () => { } }
+              styleName="btn"
             />
           ))
         }
-      </div> */}
+      </div>
     </div>
   );
 }
