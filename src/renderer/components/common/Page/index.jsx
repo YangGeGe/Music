@@ -16,7 +16,7 @@ function Page({
 }
 
 Page.propTypes = {
-  children: propTypes.object.isRequired,
+  children: propTypes.array.isRequired,
   style: propTypes.object,
 };
 

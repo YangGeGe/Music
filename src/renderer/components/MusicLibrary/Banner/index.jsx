@@ -125,20 +125,23 @@ function Banner({
           ))
         }
       </div>
-      <div
-        styleName="btnList"
-        { ... hoverActiiion }
-      >
-        {
-          imgList.map((item, index) => (
-            <div
-              key={ item.imageUrl }
-              onMouseOver={ () => { hover(index); } }
-              onFocus={ () => { } }
-              styleName="btn"
-            />
-          ))
-        }
+      <div styleName="btnWrap">
+        <ul
+          styleName="btnList"
+          { ... hoverActiiion }
+        >
+          {
+            imgList.map((item, index) => (
+              <li
+                key={ item.imageUrl }
+                onMouseOver={ () => { hover(index); } }
+                onFocus={ () => { } }
+                styleName="btn"
+                style={ { background: currentIndex === index ? '#fff' : '' } }
+              />
+            ))
+          }
+        </ul>
       </div>
     </div>
   );
