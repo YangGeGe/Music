@@ -13,8 +13,8 @@ import styles from './index.less';
  * @param {Boolean} mode 启用滑动展示
  * @param {Object} style 定制样式
  * @param {String} link 跳转路径
- *  @param {Function} clickLeft
- *  @param {Function} clickRight
+ * @param {Function} clickLeft
+ * @param {Function} clickRight
  * @return
  */
 function Title({

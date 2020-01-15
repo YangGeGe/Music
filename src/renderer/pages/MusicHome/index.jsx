@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SiderBar from '../../components/MusicHome/SiderBar';
-import Control from '../../components/common/Control';
+import Audio from '../../components/common/Audio';
 // import Button from '../../components/common/Button';
 // import Modal from '../../components/common/Modal';
 import userActions from '../../store/actions/user';
@@ -49,7 +49,7 @@ function MusicHome({
       >
         <div>2332</div>
       </Modal> */}
-      <Control/>
+      <Audio/>
     </div>
   );
 }

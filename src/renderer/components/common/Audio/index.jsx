@@ -2,7 +2,7 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import style from './index.less';
 
-function Control() {
+function Audio() {
   // 底部长度不能1000%
   return (
     <div styleName="control">
@@ -29,4 +29,4 @@ function Control() {
   );
 }
 
-export default CSSModules(Control, style);
+export default CSSModules(Audio, style);
