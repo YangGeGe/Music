@@ -49,7 +49,7 @@ function MusicHome({
       >
         <div>2332</div>
       </Modal> */}
-      <Audio/>
+      <Audio src="https://music.163.com/song/media/outer/url?id=1413377028.mp3"/>
     </div>
   );
 }

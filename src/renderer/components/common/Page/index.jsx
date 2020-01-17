@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function Page({
   children,
@@ -16,8 +16,8 @@ function Page({
 }
 
 Page.propTypes = {
-  children: propTypes.array.isRequired,
-  style: propTypes.object,
+  children: PropTypes.array.isRequired,
+  style: PropTypes.object,
 };
 
 Page.defaultProps = {

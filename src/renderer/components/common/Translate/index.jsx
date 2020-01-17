@@ -1,6 +1,6 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './index.less';
 
 function Translate({
@@ -19,9 +19,9 @@ function Translate({
 }
 
 Translate.propTypes = {
-  children: propTypes.array.isRequired,
-  style: propTypes.object.isRequired,
-  itemStyle: propTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
+  style: PropTypes.object.isRequired,
+  itemStyle: PropTypes.object.isRequired,
 };
 
 export default CSSModules(Translate, styles);

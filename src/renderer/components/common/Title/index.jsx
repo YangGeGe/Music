@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 import { Link } from 'react-router-dom';
 import {
@@ -51,12 +51,12 @@ function Title({
 }
 
 Title.propTypes = {
-  title: propTypes.string.isRequired,
-  mode: propTypes.bool,
-  style: propTypes.object,
-  link: propTypes.string,
-  clickRight: propTypes.func,
-  clickLeft: propTypes.func,
+  title: PropTypes.string.isRequired,
+  mode: PropTypes.bool,
+  style: PropTypes.object,
+  link: PropTypes.string,
+  clickRight: PropTypes.func,
+  clickLeft: PropTypes.func,
 };
 
 Title.defaultProps = {

@@ -37,6 +37,8 @@ module.exports = {
         "array": false,
         "object": true
       }],
+      "jsx-a11y/media-has-caption": [0],
+      "jsx-a11y/no-noninteractive-element-to-interactive-role": [0],
       "jsx-a11y/click-events-have-key-events": [0],
       "jsx-a11y/no-static-element-interactions": [0],
       'import/no-extraneous-dependencies': ['error',{"devDependencies": true}],

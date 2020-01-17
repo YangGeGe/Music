@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import CSSModules from 'react-css-modules';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   useSelector,
   connect,
@@ -33,7 +33,7 @@ function MusicLibrary({
 }
 
 MusicLibrary.propTypes = {
-  getBannerList: propTypes.func.isRequired,
+  getBannerList: PropTypes.func.isRequired,
 };
 
 export default connect((state) => ({

@@ -136,8 +136,7 @@ function Banner({
                 key={ item.imageUrl }
                 onMouseOver={ () => { hover(index); } }
                 onFocus={ () => { } }
-                styleName="btn"
-                style={ { background: currentIndex === index ? '#fff' : '' } }
+                styleName={ `btn ${currentIndex === index ? 'curBtn' : ''}` }
               />
             ))
           }
