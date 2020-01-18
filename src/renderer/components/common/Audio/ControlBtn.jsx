@@ -1,10 +1,4 @@
-import React,
-{
-// useRef,
-// useEffect,
-// useCallback,
-// useReducer,
-} from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 import style from './ControlBtn.less';
@@ -14,7 +8,7 @@ function ControlBtn({
   onControl,
 }) {
   return (
-    <>
+    <div styleName="btnWrap">
       <span styleName="lastSong" className="iconfont">&#xe800;</span>
       <div styleName="playStatus">
         <ul
@@ -31,7 +25,7 @@ function ControlBtn({
         </ul>
       </div>
       <span styleName="nextSong" className="iconfont">&#xe7ff;</span>
-    </>
+    </div>
   );
 }
 
