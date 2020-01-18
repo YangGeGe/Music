@@ -71,9 +71,18 @@ function Audio({
     audio.current.currentTime = newCurTime;
   };
 
+  const ended = () => {
+    audio.current.addEventListener('ended', () => {
+      // 判断当前是否为循环播放或者无下一首歌曲
+      setCurrentTime(0);
+      setPaused(true);
+    });
+  };
+
   useEffect(() => {
     getBuffer();
     getTimeData();
+    ended();
   }, [getBuffer, getTimeData]);
 
   const controlBtnProps = {

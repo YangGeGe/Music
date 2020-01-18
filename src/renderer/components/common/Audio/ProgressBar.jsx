@@ -53,10 +53,18 @@ function Audio({
     document.addEventListener('mouseup', dotMouseUp, false);
   };
 
+  const clickProgress = (e) => {
+    const bar = progressBar.current;
+    const width = e.clientX - bar.offsetLeft;
+    progress.current.style.width = `${(width / bar.clientWidth) * 100}%`;
+    changeCurrentTime(width / bar.clientWidth);
+  };
+
   return (
     <span
       styleName="progressbar commonStyle"
       ref={ progressBar }
+      onClick={ (e) => clickProgress(e) }
     >
       <span
         styleName="bufferRange commonStyle"
