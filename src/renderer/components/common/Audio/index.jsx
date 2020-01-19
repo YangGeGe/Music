@@ -6,6 +6,9 @@ import React,
   useReducer,
   useState,
 } from 'react';
+import {
+  useSelector,
+} from 'react-redux';
 import CSSModules from 'react-css-modules';
 import PropTypes from 'prop-types';
 import style from './index.less';
@@ -30,12 +33,15 @@ function reducer(_, action) {
 
 function Audio({
   src,
+  setCurrentTime,
 }) {
+  const {
+    currentTime,
+  } = useSelector(state => state.audio);
   const audio = useRef();
   const [state, dispatch] = useReducer(reducer, initState);
   const { bufferPercent } = state;
   const [paused, setPaused] = useState(true);
-  const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(null);
 
   // 缓冲进度
@@ -56,7 +62,7 @@ function Audio({
     audio.current.addEventListener('timeupdate', () => {
       setCurrentTime(audio.current.currentTime);
     }, false);
-  }, []);
+  }, [setCurrentTime]);
 
   const controlPaused = () => {
     const { current } = audio;
@@ -73,13 +79,13 @@ function Audio({
     audio.current.currentTime = newCurTime;
   };
 
-  const ended = () => {
+  const ended = useCallback(() => {
     audio.current.addEventListener('ended', () => {
       // 判断当前是否为循环播放或者无下一首歌曲
       setCurrentTime(0);
       setPaused(true);
     });
-  };
+  }, [setCurrentTime]);
 
   const changeVolume = (vol) => {
     localStorage.setItem('volume', vol);
@@ -90,7 +96,7 @@ function Audio({
     getBuffer();
     getTimeData();
     ended();
-  }, [getBuffer, getTimeData]);
+  }, [ended, getBuffer, getTimeData]);
 
   const controlBtnProps = {
     paused,
@@ -131,6 +137,7 @@ function Audio({
 
 Audio.propTypes = {
   src: PropTypes.string.isRequired,
+  setCurrentTime: PropTypes.func.isRequired,
 };
 
 export default CSSModules(Audio, style);

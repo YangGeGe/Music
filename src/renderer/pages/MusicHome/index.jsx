@@ -10,11 +10,13 @@ import Audio from '../../components/common/Audio';
 // import Button from '../../components/common/Button';
 // import Modal from '../../components/common/Modal';
 import userActions from '../../store/actions/user';
+import audioActions from '../../store/actions/audio';
 import style from './index.less';
 
 
 function MusicHome({
   routes,
+  setCurrentTime,
 }) {
   // const [visible, setVisible] = useState(false);
 
@@ -49,15 +51,16 @@ function MusicHome({
       >
         <div>2332</div>
       </Modal> */}
-      <Audio src="https://music.163.com/song/media/outer/url?id=1404885266.mp3"/>
+      <Audio src="https://music.163.com/song/media/outer/url?id=25714102.mp3" setCurrentTime={ setCurrentTime }/>
     </div>
   );
 }
 
 MusicHome.propTypes = {
   routes: propTypes.array.isRequired,
+  setCurrentTime: propTypes.func.isRequired,
 };
 
 export default connect((state) => ({
   ...state,
-}), userActions)(CSSModules(MusicHome, style));
+}), { ...userActions, ...audioActions })(CSSModules(MusicHome, style));

@@ -22,7 +22,7 @@ function MusicLibrary({
       type: 0,
     });
   }, [getBannerList]);
-  console.log(useSelector(state => state));
+  // console.log(useSelector(state => state));
 
   return (
     <Page>
