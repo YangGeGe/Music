@@ -12,6 +12,7 @@ import style from './index.less';
 import MusicInfo from './MusicInfo';
 import ControlBtn from './ControlBtn';
 import ProgressBar from './ProgressBar';
+import Time from './Time';
 
 const initState = {
   bufferPercent: 0,
@@ -106,7 +107,9 @@ function Audio({
         <MusicInfo/>
         <div styleName="playInfo">
           <ControlBtn { ...controlBtnProps }/>
+          <Time time={ currentTime }/>
           <ProgressBar { ...progressBarProps }/>
+          <Time time={ duration }/>
           <div styleName="musicActions">
             <span styleName="collection commonStyle" className="iconfont">&#xe708;</span>
             <span className="iconfont" styleName="commonStyle">&#xe66c;</span>
