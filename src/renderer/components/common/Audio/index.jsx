@@ -13,6 +13,7 @@ import MusicInfo from './MusicInfo';
 import ControlBtn from './ControlBtn';
 import ProgressBar from './ProgressBar';
 import Time from './Time';
+import VoiceBar from './VoiceBar';
 
 const initState = {
   bufferPercent: 0,
@@ -80,6 +81,11 @@ function Audio({
     });
   };
 
+  const changeVolume = (vol) => {
+    localStorage.setItem('volume', vol);
+    audio.current.volume = Math.round(vol * 10) / 10;
+  };
+
   useEffect(() => {
     getBuffer();
     getTimeData();
@@ -111,12 +117,11 @@ function Audio({
           <ProgressBar { ...progressBarProps }/>
           <Time time={ duration }/>
           <div styleName="musicActions">
-            <span styleName="collection commonStyle" className="iconfont">&#xe708;</span>
-            <span className="iconfont" styleName="commonStyle">&#xe66c;</span>
-            <span className="iconfont" styleName="commonStyle">&#xe732;</span>
-            <span styleName="voicebar commonStyle"/>
-            <span styleName="commonStyle">词</span>
-            <span className="iconfont" styleName="commonStyle">&#xe714;</span>
+            <span styleName="collection" className="iconfont">&#xe708;</span>
+            <span className="iconfont" styleName="playControle">&#xe66c;</span>
+            <VoiceBar changeVolume={ (vol) => changeVolume(vol) }/>
+            <span styleName="word">词</span>
+            <span className="iconfont" styleName="songList">&#xe714;</span>
           </div>
         </div>
       </div>
@@ -128,4 +133,4 @@ Audio.propTypes = {
   src: PropTypes.string.isRequired,
 };
 
-export default CSSModules(Audio, style, { allowMultiple: true });
+export default CSSModules(Audio, style);

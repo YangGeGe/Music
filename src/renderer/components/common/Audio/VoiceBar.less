@@ -1,0 +1,32 @@
+.spanCommon {
+  display: inline-block;
+}
+
+.voiceBar {
+  .spanCommon;
+  position: relative;
+  width: 62px;
+  height: 1px;
+  background-color: #55585f;
+  margin: 0 0 6px 6px;
+}
+
+.vocieProgress {
+  .spanCommon;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  background-color: #fff;
+}
+
+.dot {
+  .spanCommon;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  right: -2.5px;
+  top: 0;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
