@@ -8,6 +8,7 @@ import {
 import musicLibraryActions from '../../store/actions/musicLibrary';
 import style from './index.less';
 import Banner from '../../components/MusicLibrary/Banner';
+import Header from '../../components/MusicLibrary/Header';
 import Recommend from '../../components/MusicLibrary/Recommend';
 import Page from '../../components/common/Page';
 
@@ -26,6 +27,7 @@ function MusicLibrary({
 
   return (
     <Page>
+      <Header/>
       <Banner imgList={ bannerList }/>
       <Recommend/>
     </Page>

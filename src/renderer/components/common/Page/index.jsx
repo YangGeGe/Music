@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 
 function Page({
   children,
-  style,
+  // style,
 }) {
   return (
-    <div style={ Object.keys(style).length > 0 || {
-      padding: '0 20px',
-    } }
-    >
+    <div>
       {children}
     </div>
   );
@@ -17,11 +14,11 @@ function Page({
 
 Page.propTypes = {
   children: PropTypes.array.isRequired,
-  style: PropTypes.object,
+  // style: PropTypes.object,
 };
 
 Page.defaultProps = {
-  style: {},
+  // style: {},
 };
 
 export default Page;

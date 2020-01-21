@@ -1,0 +1,82 @@
+.history{
+  width: 30rem;
+  height: calc(100vh - 120px);
+  right: 0rem;
+  top: 40px;
+  overflow-y: scroll;
+  background: rgba(54, 54, 54);
+  position: absolute;
+  z-index: 9999;
+  padding: 10px 20px;
+  div {
+    color: rgb(114, 114, 114);
+    font-size: 14px;
+    margin: 10px 0;
+    .defaluteSpan {
+      display: inline-block;
+      padding: 5px 15px;
+      font-size: 12px;
+      line-height: 20px;
+      cursor: pointer;
+      border-radius: 20px;
+      border: 1px solid rgb(84, 84, 84);
+      background: rgb(54, 54, 54);
+      color: rgb(185, 185, 185);
+      transition: all .5s;
+      white-space: nowrap;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      &:hover {
+        color: white;
+        background: rgb(64, 64, 64);
+        transition: all .5s;
+      }
+    }
+    .defaluteTitle, .defaluteSpanList{
+      display: block;
+      overflow: hidden;
+    }
+    .defaluteClear {
+      float: right;
+      cursor: pointer;
+    }
+    .searchListTitle span{
+      margin-right: 5px;
+    }
+    .searchList {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      padding: 5px 10px 5px 30px;
+      color: rgb(175, 175, 175);
+      transition: all .5s;
+      margin-left: -20px;
+      &:hover{
+        color: white;
+        background: rgb(62, 62, 62);
+        transition: all .5s;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 1px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #535353;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: rgba(54, 54, 54);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .history {
+    width: 20rem;
+  }
+}
